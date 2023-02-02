@@ -12,6 +12,15 @@ async function displayCoins() {
 		const response = await getListOfCoins();
 		// Render 10 coin cards by passing the coins and parent element to the renderCoinCards() function
 		renderCoinCards(response.data.coins, $("#top10"));
+		$(".card-link").on("click", saveToLS)
+
+		//function to save the favourites link to local storage
+		function saveToLS(e) {
+			// favourites variable to get the item from local storage  or empty array
+			const favourites = JSON.parse(localStorage.getItem("favourites")) || []
+			localStorage.setItem("favourites", JSON.stringify([... favourites, $(this).attr("data-uuid")]))	
+		}
+
 	} catch (error) {
 		// Display an error message to the end-user if the API call fails
 		console.error('An error occurred while fetching the data from the API: ', error.responseJSON.message);
@@ -33,7 +42,7 @@ function createCoinCard(coin) {
       </div>
       <p>Price $${price}</p>
       <p>Daily Change ${change}%</p>
-	  <a href="#" class="card-link">Add to favourites</a>
+	  <a href="#" class="card-link" data-uuid='${uuid}'>Add to favourites</a>
     </div>
   `;
 }
@@ -57,3 +66,6 @@ function renderCoinCards(coins, parentElement) {
 
 // Call the displayCoins() function to start the process
 displayCoins();
+
+
+
