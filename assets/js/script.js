@@ -33,6 +33,7 @@ function createCoinCard(coin) {
       </div>
       <p>Price $${price}</p>
       <p>Daily Change ${change}%</p>
+	  <a href="#" class="card-link">Add to favourites</a>
     </div>
   `;
 }
