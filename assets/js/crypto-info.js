@@ -137,17 +137,23 @@ let response = {
 //!     {icon} Market Cap - {MARKETCAP} - GET coin
 //!     {icon} All-Time-High - {ALL-TIME-HIGH} - GET coin
 
-function renderAdditionalInfo(getCoinResponse) {
+function renderAdditionalInfo(getCoinResponse, containerDivId) {
 
-    const titleElm = document.createElement("h2");
-    const descriptonElm = document.createElement("p");
-    const priceElm = document.createElement("p");
-    const rankElm = document.createElement("p");
-    const volumeElm = document.createElement("p");
-    const marketCapElm = document.createElement("p");
-    const timeHighElm = document.createElement("p");
+    const titleElm = $("<div>").attr('id', 'title');
+    const descriptonElm = $("<div>").attr('id', 'description');
+    const priceElm = $("<div>").attr('id', 'price');
+    const rankElm = $("<div>").attr('id', 'rank');
+    const volumeElm = $("<div>").attr('id', 'volume');
+    const marketCapElm = $("<div>").attr('id', 'marketCap');
+    const timeHighElm = $("<div>").attr('id', 'timeHigh');
 
-
+    containerDivId.append(titleElm);
+    containerDivId.append(descriptonElm);
+    containerDivId.append(priceElm);
+    containerDivId.append(rankElm);
+    containerDivId.append(volumeElm);
+    containerDivId.append(marketCapElm);
+    containerDivId.append(timeHighElm);
 
     let coin;
     let coinPrice;
@@ -156,6 +162,6 @@ function renderAdditionalInfo(getCoinResponse) {
     let coinMarketCap;
     let coinAllTimeHigh;
 
-
+    
 
 };
