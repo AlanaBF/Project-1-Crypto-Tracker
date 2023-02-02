@@ -53,4 +53,3 @@ function getCoinPriceHistory () {
 		console.log(response);
 	});
 }
-
