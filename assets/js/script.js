@@ -32,7 +32,7 @@ function createCoinCard(coin) {
         <img class='coin-icon' width='30px' src='${iconUrl}' alt='${symbol} icon'/>
       </div>
       <p>Price $${price}</p>
-      <p>Daily Change ${change}</p>
+      <p>Daily Change ${change}%</p>
     </div>
   `;
 }
