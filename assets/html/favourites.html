@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Favourites</title>
 </head>
+
 <body>
-    
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3">
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./assets/html/crypto-currency.html">Crypto Currencies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./assets/html/news.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./assets/html/favourites.html">Favourites</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- main jumbotron header-->
+            <main class="col-md-9">
+                <div class="jumbotron jumbotron-fluid">
+
+                    <div class="container">
+                        <h1 class="display-4">Favourites</h1>
+                        <p class="lead">
+                            No favourites? Select your top 3 and head over to the Favourites page to keep a
+                            closer eye on them.
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/services/coins.js"></script>
+    <script src="./assets/services/news.js"></script>
+    <script src="./assets/js/script.js"></script>
+
 </body>
+
 </html>
