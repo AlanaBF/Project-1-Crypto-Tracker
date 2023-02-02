@@ -1,55 +1,66 @@
-function getListOfCoins() {
+const API_KEY = 'db60a21bf6msh0c7c9e1851c4408p1d3b11jsnca09255a288c';
+const baseUrl = 'https://coinranking1.p.rapidapi.com/';
+
+//By default gets 10 top coins, but can be called with different limit
+async function getListOfCoins(limit = 10) {
 	//Get a list of coins 
 	const settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0",
+		"url": `${baseUrl}coins/?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=${limit}&offset=0`,
 		"method": "GET",
 		"headers": {
-			"X-RapidAPI-Key": "db60a21bf6msh0c7c9e1851c4408p1d3b11jsnca09255a288c",
+			"X-RapidAPI-Key": API_KEY,
 			"X-RapidAPI-Host": "coinranking1.p.rapidapi.com"
 		}
 	};
 
-	return $.ajax(settings).then(function (response) {
-		console.log(response);
-	})
+	try {
+		return await $.ajax(settings);
+	} catch (error) {
+		return error;
+	}
+
 }
 
 //Get specific coin by its UUID
-function getOneCoin() {
-var UUID = '';
-const parameters = {
-	"async": true,
-	"crossDomain": true,
-	"url": `https://coinranking1.p.rapidapi.com/coin/Qwsogvtv82FCd?referenceCurrencyUuid=${UUID}&timePeriod=24h`,
-	"method": "GET",
-	"headers": {
-		"X-RapidAPI-Key": "db60a21bf6msh0c7c9e1851c4408p1d3b11jsnca09255a288c",
-		"X-RapidAPI-Host": "coinranking1.p.rapidapi.com"
-	}
-};
+async function getOneCoin(UUID) {
 
-$.ajax(parameters).done(function (response) {
-	console.log(response);
-});
-}
-getListOfCoins();
-
-//Get iformation for the chart
-function getCoinPriceHistory () {
-	const settings = {
+	const parameters = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://coinranking1.p.rapidapi.com/coin/Qwsogvtv82FCd/history?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h",
+		"url": `${baseUrl}coin/${UUID}?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h`,
 		"method": "GET",
 		"headers": {
-			"X-RapidAPI-Key": "db60a21bf6msh0c7c9e1851c4408p1d3b11jsnca09255a288c",
+			"X-RapidAPI-Key": API_KEY,
 			"X-RapidAPI-Host": "coinranking1.p.rapidapi.com"
 		}
 	};
 
-	$.ajax(settings).done(function (response) {
-		console.log(response);
-	});
+	try {
+		return await $.ajax(parameters);
+	} catch (error) {
+		return error;
+	}
+}
+
+
+//Get iformation for the chart
+async function getCoinPriceHistory() {
+	const settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": `${baseUrl}coin/Qwsogvtv82FCd/history?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h`,
+		"method": "GET",
+		"headers": {
+			"X-RapidAPI-Key": API_KEY,
+			"X-RapidAPI-Host": "coinranking1.p.rapidapi.com"
+		}
+	};
+
+	try {
+		return await $.ajax(settings);
+	} catch (error) {
+		return error;
+	}
 }
