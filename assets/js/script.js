@@ -35,7 +35,7 @@ function createCoinCard(coin) {
 
 	// Return the HTML template for a single coin card
 	return `
-    <div data-uuid='${uuid}' class="card">
+    <div data-uuid='${uuid}' class="card col">
       <div class='card-header'>
         <h2>${name}</h2>
         <img class='coin-icon' width='30px' src='${iconUrl}' alt='${symbol} icon'/>
@@ -51,7 +51,7 @@ function createCoinCard(coin) {
 // Function to render 10 coin cards. Takes an array of coins and appends each coin card to coins wrapper and then to the given parent element
 function renderCoinCards(coins, parentElement) {
 	//Create wrapper container for all cards
-	const cardsWrapperEl = $('<div>');
+	const cardsWrapperEl = $('<div>').attr('id', 'cardsWrapper').attr('class', 'row');
 
 	// Loop through the array of all coins and create a card for each coin
 	coins.forEach(function (coin) {
