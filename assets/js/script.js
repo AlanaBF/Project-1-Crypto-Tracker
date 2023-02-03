@@ -12,26 +12,7 @@ async function displayCoins() {
 		const response = await getListOfCoins();
 		// Render 10 coin cards by passing the coins and parent element to the renderCoinCards() function
 		renderCoinCards(response.data.coins, $("#top10"));
-		$(".card-link").on("click", saveToLS)
 
-		//function to save the favourites link to local storage
-		function saveToLS(e) {
-			const currentCardUuid = $(this).attr("data-uuid");
-			if(!currentCardUuid) {
-				localStorage.setItem("favourites", JSON.stringify([]));
-			}
-			const fav = JSON.parse(localStorage.getItem("favourites").includes(currentCardUuid));
-			if(fav) {
-				const favourites = JSON.parse(localStorage.getItem("favourites"));
-				const filteredFav = favourites.filter(uuid => uuid !== currentCardUuid);
-				localStorage.setItem("favourites", JSON.stringify(filteredFav));
-			} else {
-			// favourites variable to get the item from local storage  or empty array
-			const favourites = JSON.parse(localStorage.getItem("favourites")) 
-			localStorage.setItem("favourites", JSON.stringify([... favourites, currentCardUuid]));
-			}
-			
-		}
 
 	} catch (error) {
 		// Display an error message to the end-user if the API call fails
@@ -74,7 +55,34 @@ function renderCoinCards(coins, parentElement) {
 
 	// Append the coin card to the parent element
 	parentElement.append(cardsWrapperEl);
+	// Add event listener to save  favorite to localStorage 
+	$(cardsWrapperEl).on("click", '.card-link', saveToLS);
 }
+
+
+
+// Function to save the favourite coin's UUID to local storage
+function saveToLS(e) {
+	// Get the UUID of the current coin card
+	const currentCardUuid = $(this).attr("data-uuid");
+
+	// Check if the favourites item exists in local storage, and create an empty array if not
+	let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+
+	// Check if the current card's UUID is already in the list of favourites
+	const isFavourite = favourites.includes(currentCardUuid);
+	if (isFavourite) {
+		// If the UUID is already in the favourites, remove it from the list
+		favourites = favourites.filter(uuid => uuid !== currentCardUuid);
+	} else {
+		// If the UUID is not in the favourites, add it to the list
+		favourites = [...favourites, currentCardUuid];
+	}
+
+	// Save to local storage
+	localStorage.setItem("favourites", JSON.stringify(favourites));
+}
+
 
 // Call the displayCoins() function to start the process
 displayCoins();
