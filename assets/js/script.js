@@ -16,9 +16,21 @@ async function displayCoins() {
 
 		//function to save the favourites link to local storage
 		function saveToLS(e) {
+			const currentCardUuid = $(this).attr("data-uuid");
+			if(!currentCardUuid) {
+				localStorage.setItem("favourites", JSON.stringify([]));
+			}
+			const fav = JSON.parse(localStorage.getItem("favourites").includes(currentCardUuid));
+			if(fav) {
+				const favourites = JSON.parse(localStorage.getItem("favourites"));
+				const filteredFav = favourites.filter(uuid => uuid !== currentCardUuid);
+				localStorage.setItem("favourites", JSON.stringify(filteredFav));
+			} else {
 			// favourites variable to get the item from local storage  or empty array
-			const favourites = JSON.parse(localStorage.getItem("favourites")) || []
-			localStorage.setItem("favourites", JSON.stringify([... favourites, $(this).attr("data-uuid")]))	
+			const favourites = JSON.parse(localStorage.getItem("favourites")) 
+			localStorage.setItem("favourites", JSON.stringify([... favourites, currentCardUuid]));
+			}
+			
 		}
 
 	} catch (error) {
