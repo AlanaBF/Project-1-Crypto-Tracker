@@ -6,12 +6,15 @@
 // and the renderCoinCards() function loops through the coins and appends each coin card to a parent element.
 
 //This formatter is needed to convert big numbers into nice looking str
+//Taken from stackoverflow :) 
 let formatter = Intl.NumberFormat('en', { notation: 'compact' });
 
 async function displayCoins() {
 	try {
 		// Get data from API by calling the getListOfCoins() function
 		const response = await getListOfCoins();
+		//Render general market stats to jumbotron
+		renderMarketStats(response.data.stats);
 		// Render 10 coin cards by passing the coins and parent element to the renderCoinCards() function
 		renderCoinCards(response.data.coins, $("#top10"));
 
@@ -22,6 +25,25 @@ async function displayCoins() {
 	}
 }
 
+//Function to create general market stats block
+function renderMarketStats(data) {
+	// Destructure the properties from the `data` object
+	const { totalCoins, totalMarkets, totalMarketCap, total24hVolume } = data;
+	// Create a string of HTML code using the extracted values
+	const statsEl = `
+		<div class="stats-container">
+				<h4>Market Statistics</h4>
+				<div class="stats-wrapper" style='display: flex; justify-content: space-between;'>
+						<p>Total Criptocurrencies: <span>${totalCoins}</span></p>
+						<p>Total Markets: <span>${totalMarkets}</span></p>
+						<p>Total MarketCap: <span>${formatter.format(totalMarketCap)}</span></p>
+						<p>Total 24h Volume: <span>${formatter.format(total24hVolume)}</span></p>
+				</div>
+		</div>
+`
+	// Append the HTML code to an container inside jumbotron
+	$('.jumbotron').children('.container').append(statsEl);
+}
 
 
 // Function to create a single coin card with the given coin data
