@@ -5,6 +5,8 @@
 // The createCoinCard() function creates a single coin card with the given coin data, 
 // and the renderCoinCards() function loops through the coins and appends each coin card to a parent element.
 
+//This formatter is needed to convert big numbers into nice looking str
+let formatter = Intl.NumberFormat('en', { notation: 'compact' });
 
 async function displayCoins() {
 	try {
@@ -21,11 +23,11 @@ async function displayCoins() {
 }
 
 
+
 // Function to create a single coin card with the given coin data
 function createCoinCard(coin) {
 	// Destructure variables from the response
-	const { name, price, change, iconUrl, symbol, uuid } = coin;
-
+	const { name, price, change, iconUrl, symbol, uuid, marketCap } = coin;
 	// Return the HTML template for a single coin card
 	return `
     <div data-uuid='${uuid}' class="card">
@@ -33,8 +35,9 @@ function createCoinCard(coin) {
         <h2>${name}</h2>
         <img class='coin-icon' width='30px' src='${iconUrl}' alt='${symbol} icon'/>
       </div>
-      <p>Price $${price}</p>
+      <p>Price $${Number(price).toFixed(2)}</p>
       <p>Daily Change ${change}%</p>
+			<p>Market Cap $${formatter.format(marketCap)}</p>
 	  <a href="#" class="card-link" data-uuid='${uuid}'>Add to favourites</a>
     </div>
   `;
@@ -44,7 +47,7 @@ function createCoinCard(coin) {
 // Function to render 10 coin cards. Takes an array of coins and appends each coin card to coins wrapper and then to the given parent element
 function renderCoinCards(coins, parentElement) {
 	//Create wrapper container for all cards
-	const cardsWrapperEl = $('<div>');
+	const cardsWrapperEl = $('<div>').addClass('cardsWrapper');
 
 	// Loop through the array of all coins and create a card for each coin
 	coins.forEach(function (coin) {
