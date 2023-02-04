@@ -4,6 +4,7 @@ A collaborative project that primarily focuses on using bootstrap, 2 server side
 The application itself aims to make viewing up to date Crypto Currencies and making informed decisions as an investor or potential investor. It displays the top 10 currencies and the 6 most current news articles on Crypto Currency on the main page. There is the option to append currencies relevant to what the user would like to single out and keep a closer eye on to the favourites page. There are two other pages; News and Crypto Currencies that display more options with greater content.
 
 LINK TO DEPLOYED PAGE TO GO HERE
+
 <https://alanabf.github.io/Project-1-Crypto-Tracker/> 
 ## Your Task
 With your team, you'll conceive and execute a design that solves a real-world problem by integrating data received from multiple server-side API requests. You'll also work with agile development methodologies to help you work collaboratively. You'll implement feature and bug fixes using Git branch workflow and pull requests.
