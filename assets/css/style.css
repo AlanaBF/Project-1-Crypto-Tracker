@@ -28,7 +28,6 @@ p {
 }
 /* Navbar */
 nav {
-    max-width: 20% !important;
     background-color: #322C56;
     justify-content: center;
     align-items: center;
@@ -48,11 +47,10 @@ nav ul li:first-child {
 }
 
 /* Main */
-main {
-    margin-left: 35px;
-}
+
 /* Banner - Jumbotron */
 .jumbotron {
+    width: 90%;
     margin: 30px auto !important;
     padding: 30px 20px;
 }
