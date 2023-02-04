@@ -1,13 +1,92 @@
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-auto-rows: auto;
+/* Globals */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-
+h4 {
+    font-size: 2.6rem !important;
+    font-weight: 400 !important;
+}
+p {
+    font-size: 1.1rem !important;
+}
+.container-fluid  {
+    margin: 0 !important;
+    padding: 0;
+}
+.row {
+    margin: 0 auto!important;
+    width: 100% !important;
+}
 /* Error message on input */
 #error {
     color: red;
 }
 .hide {
     display: none;
+}
+/* Navbar */
+nav {
+    max-width: 20% !important;
+    background-color: #322C56;
+    justify-content: center;
+    align-items: center;
+}
+nav ul {
+    padding: 10px !important;
+    list-style: none;
+    margin: 30px auto;
+}
+nav ul li a {
+    color: #fff;
+    margin-top: 5px;
+}
+nav ul li:first-child {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Main */
+main {
+    margin-left: 35px;
+}
+/* Banner - Jumbotron */
+.jumbotron {
+    margin: 30px auto !important;
+    padding: 30px 20px;
+}
+.jumbotron .container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+/* Left side */
+.stats-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.stats-wrapper p {
+    display: flex;
+    justify-content: space-between;
+}
+.stats-wrapper p span {
+    font-weight: 500;
+}
+/* Right side */
+.favourites-ad {
+    width: 50%;
+    padding: 0px 20px 0px 50px;
+    border-left: 1px solid #222;
+}
+/* 10 Crypto */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: auto;
+}
+.saved-icon {
+    background-color: red;
 }
