@@ -58,6 +58,3 @@ function renderCoinCards(coins, parentElement) {
 
 // Call the displayCoins() function to start the process
 displayCoins();
-
-
-
