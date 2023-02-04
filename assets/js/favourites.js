@@ -31,7 +31,7 @@ function renderFavourites(coins) {
   // If there are any favourite coins, add a click event to the container
   // This event will re-render the favourites when a coin card is clicked (Delegated to parrent container)
   if (filteredFavourites.length) {
-    $('#favouritesContainer').on("click", '.card-link', () => renderFavourites(coins));
+    $('#favouritesContainer').on("click", '.fav-link', () => renderFavourites(coins));
   } else {
     // If there are no favourite coins, display a message to the user
     $('#favouritesContainer').text("Hmm.. Looks like you don't have any favourite coins yet..")

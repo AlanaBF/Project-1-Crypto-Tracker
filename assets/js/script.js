@@ -60,11 +60,12 @@ function createCoinCard(coin) {
       <p>Price $${Number(price).toFixed(2)}</p>
       <p>Daily Change ${change}%</p>
 			<p>Market Cap $${formatter.format(marketCap)}</p>
-	  <a href="#" class="card-link" data-uuid='${uuid}'>Add to favourites</a>
+	<i class="fav-link fa-solid fa-heart"></i>
     </div>
   `;
 }
-
+// change from card link to icon
+// <a href="#" class="card-link" data-uuid='${uuid}'>Add to favourites</a>
 
 // Function to render 10 coin cards. Takes an array of coins and appends each coin card to coins wrapper and then to the given parent element
 function renderCoinCards(coins, parentElement) {
@@ -81,7 +82,7 @@ function renderCoinCards(coins, parentElement) {
 	// Append the coin card to the parent element
 	parentElement.append(cardsWrapperEl);
 	// Add event listener to save  favorite to localStorage 
-	$(cardsWrapperEl).on("click", '.card-link', saveToLS);
+	$(cardsWrapperEl).on("click", '.fav-link', saveToLS);
 }
 
 
