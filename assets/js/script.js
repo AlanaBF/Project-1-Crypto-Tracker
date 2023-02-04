@@ -60,7 +60,7 @@ function createCoinCard(coin) {
       <p>Price $${Number(price).toFixed(2)}</p>
       <p>Daily Change ${change}%</p>
 			<p>Market Cap $${formatter.format(marketCap)}</p>
-	<i class="fav-link fa-solid fa-heart data-uuid='${uuid}'"></i>
+	<i class="fav-link fa-solid fa-heart" data-uuid='${uuid}'></i>
     </div>
   `;
 }
