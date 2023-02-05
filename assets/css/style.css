@@ -146,3 +146,7 @@ nav ul li:first-child {
 .card p span {
     font-weight: 500;
 }
+
+.fav-link {
+    color: red;
+}
