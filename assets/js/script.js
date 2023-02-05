@@ -112,6 +112,3 @@ function saveToLS(e) {
 
 // Call the displayCoins() function to start the process
 displayCoins();
-
-
-
