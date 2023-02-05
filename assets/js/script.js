@@ -54,12 +54,12 @@ function createCoinCard(coin) {
 	return `
     <div data-uuid='${uuid}' class="card">
       <div class='card-header'>
-        <h2>${name}</h2>
+        <h4>${name}</h4>
         <img class='coin-icon' width='30px' src='${iconUrl}' alt='${symbol} icon'/>
       </div>
-      <p>Price $${Number(price).toFixed(2)}</p>
-      <p>Daily Change ${change}%</p>
-			<p>Market Cap $${formatter.format(marketCap)}</p>
+      <p>Price <span>$${Number(price).toFixed(2)}</span></p>
+      <p>Daily Change <span>${change}%</span></p>
+			<p>Market Cap <span>$${formatter.format(marketCap)}</span></p>
 	<i class="fav-link fa-solid fa-heart" data-uuid='${uuid}'></i>
     </div>
   `;
