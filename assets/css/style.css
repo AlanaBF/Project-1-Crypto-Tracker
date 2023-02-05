@@ -1,24 +1,23 @@
 /* Globals */
+:root {
+    --primary-color: #322C56;
+    --primary-shadow: 0px 0px 13px 2px #4b4180;
+
+
+}
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-h4 {
-    font-size: 2.6rem !important;
+h2 {
+    font-size: 2.2rem !important;
     font-weight: 400 !important;
 }
 p {
     font-size: 1.1rem !important;
 }
-.container-fluid  {
-    margin: 0 !important;
-    padding: 0;
-}
-.row {
-    margin: 0 auto!important;
-    width: 100% !important;
-}
+
 /* Error message on input */
 #error {
     color: red;
@@ -28,7 +27,7 @@ p {
 }
 /* Navbar */
 nav {
-    background-color: #322C56;
+    background-color: var(--primary-color);
     justify-content: center;
     align-items: center;
 }
@@ -46,11 +45,9 @@ nav ul li:first-child {
     font-weight: 700;
 }
 
-/* Main */
-
 /* Banner - Jumbotron */
 .jumbotron {
-    width: 90%;
+    width: 95%;
     margin: 30px auto !important;
     padding: 30px 20px;
 }
@@ -58,13 +55,14 @@ nav ul li:first-child {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
-    margin: 0 auto;
+    padding: 0;
 }
-
 /* Left side */
 .stats-wrapper {
     display: flex;
     flex-direction: column;
+    margin-right: 25px;
+    margin-top: 25px;
 }
 .stats-wrapper p {
     display: flex;
@@ -76,15 +74,75 @@ nav ul li:first-child {
 /* Right side */
 .favourites-ad {
     width: 50%;
-    padding: 0px 20px 0px 50px;
+    padding: 0px 20px 0px 30px;
     border-left: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.lead {
+    margin-top: 15px;
+}
+.to-fav-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    padding: 8px 13px;
+    border-radius: 30px;
+    align-self: center;
+}
+.to-fav-btn:hover {
+    box-shadow: var(--primary-shadow)
 }
 /* 10 Crypto */
-.cards {
+/* .cards {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-auto-rows: auto;
-}
+} */
 .saved-icon {
     background-color: red;
+}
+.cards {
+    width: 95%;
+    margin: 30px auto !important;
+    padding: 30px 20px;
+    padding: 0;
+}
+.top-10 {
+    overflow: scroll;
+    overflow-y: hidden;
+}
+.top-10::-webkit-scrollbar {
+    background-color: transparent;
+    height: 10px;
+    border-radius: 10px;
+  }
+  .top-10::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+  }
+.cardsWrapper {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 20px;
+    padding: 20px 0px;
+}
+.card {
+    min-width: 300px;
+}
+.card-header {
+    display: flex;
+    justify-content: space-around;
+}
+.card p {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    padding: 5px 20px;
+}
+.card p span {
+    font-weight: 500;
 }
