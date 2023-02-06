@@ -197,3 +197,50 @@ nav ul li:first-child {
     animation-name: heartAnimation;
     animation-duration: 0.4s;
 }
+
+
+
+
+/* CoinModalDetails styles */
+
+.coin-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1001;
+
+}
+
+.coin-modal-inner {
+    width: 90vw;
+    max-width: 1200px;
+    height: 90vh;
+    background-color: antiquewhite;
+    overflow-y: scroll;
+    margin: 30px auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.coin-modal-header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#chart {
+    min-width: 90%;
+   min-height: 45%;
+}
+
+.coin-modal-info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.statistics-block  {
+    padding: 30px;
+}
