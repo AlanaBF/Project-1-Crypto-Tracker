@@ -1,6 +1,6 @@
 // Define an asynchronous function that will display a list of coins
 async function displayCoins() {
-  try {
+  
     // Make an API call using the getListOfCoins function
     // Pass 100 as an argument to the function to limit response by 100 coins
     const response = await getListOfCoins(100);
@@ -8,10 +8,7 @@ async function displayCoins() {
     // Call the renderFavourites function, passing in the list of coins from the API response
     renderFavourites(response.data.coins);
 
-  } catch (error) {
-    // If the API call fails, log an error message to the console for debugging purposes
-    console.error('An error occurred while fetching the data from the API: ', error.responseJSON.message);
-  }
+  
 }
 
 // Define a function to render the list of favourite coins
