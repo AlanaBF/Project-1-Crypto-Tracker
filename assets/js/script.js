@@ -125,7 +125,7 @@ function openModal(e) {
 	//If clicked on heart inside card don't do anything
 	if (e.target.classList.contains('fav-link')) return
 	const uuid = $(this).attr('data-uuid');
-	$('body').addClass("fixed");
+	$('body').addClass("modal-open");
 	displayCoinDetails(uuid);
 }
 

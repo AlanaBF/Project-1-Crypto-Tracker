@@ -1,7 +1,3 @@
-
-const uuid = 'Qwsogvtv82FCd';
-
-// displayCoinDetails();
 async function displayCoinDetails(uuid) {
 
   const coinHistoryRes = await getCoinPriceHistory(uuid);
@@ -38,7 +34,7 @@ function createCoinModal(coin) {
                 <h2> What is ${name}</h2>
                 ${description}
               </div>
-              <div class="statistics-block">
+              <div class="statistics-block links-block">
               <h2> ${name} Links</h2>
             ${createCoinLinks(coin.links)}
             </div>
@@ -101,7 +97,7 @@ function createCoinLinks(links) {
 
 function closeModal(e) {
   if (e.target.classList.contains('closeIcon') || !e.target.closest('#coinModalInner')) {
-    $('body').removeClass('fixed');
+    $('body').removeClass('modal-open');
     document.body.removeEventListener('click', closeModal);
     $('#coinModal').remove();
   }

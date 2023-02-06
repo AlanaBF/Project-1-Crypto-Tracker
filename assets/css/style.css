@@ -207,7 +207,7 @@ nav ul li:first-child {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1001;
 }
 
@@ -215,7 +215,7 @@ nav ul li:first-child {
     width: 90vw;
     max-width: 1200px;
     height: 90vh;
-    background-color: var(--cards-color);
+    background-color: #fff;
     overflow-y: scroll;
     margin: 30px auto;
     padding: 30px;
@@ -272,6 +272,12 @@ h4 {
     font-weight: 600;
 }
 
+.links-block {
+    width: 100%;
+    max-width: 500px;
+}
+
+
 .closeIcon {
     position: sticky;
     top: 5px;
@@ -279,8 +285,10 @@ h4 {
     z-index: 9999;
     cursor: pointer;
     font-size: 1.5rem;
+    display: flex !important;
+    justify-content: end !important;
 }
 
-.fixed {
-    position: fixed;
+.modal-open {
+    overflow: hidden;
 }
