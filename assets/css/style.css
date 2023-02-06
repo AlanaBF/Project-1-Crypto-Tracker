@@ -56,14 +56,17 @@ nav ul li:first-child {
 .jumbotron .container {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-around;
     padding: 0;
 }
 /* Left side */
+.stats-container {
+    width: 50%;
+    margin-right: 30px;
+    margin-left: 20px;
+}
 .stats-wrapper {
     display: flex;
     flex-direction: column;
-    margin-right: 25px;
     margin-top: 25px;
 }
 .stats-wrapper p {
@@ -72,6 +75,7 @@ nav ul li:first-child {
 }
 .stats-wrapper p span {
     font-weight: 500;
+
 }
 /* Right side */
 .favourites-ad {
@@ -83,7 +87,8 @@ nav ul li:first-child {
     text-align: center;
 }
 .lead {
-    margin-top: 15px;
+    max-width: 80%;
+    margin: 15px auto;
 }
 .to-fav-btn {
     background-color: var(--primary-color);
@@ -157,4 +162,17 @@ nav ul li:first-child {
 }
 .fav-link {
     color: red;
+}
+#topNews {
+    overflow: scroll;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.link-news-card {
+    min-width: 300px;
 }
