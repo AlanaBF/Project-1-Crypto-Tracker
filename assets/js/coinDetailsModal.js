@@ -86,7 +86,7 @@ function createCoinLinks(links) {
   let cards = '';
 
   links.forEach(link => {
-    const { type, url, name } = link;ƒ
+    const { type, url, name } = link;
 
     cards += `
         <div class='info'>
