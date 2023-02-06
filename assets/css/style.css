@@ -286,6 +286,7 @@ nav ul li:first-child {
     }
     .jumbotron .container {
         display: flex;
+
         flex-direction: column-reverse !important;
         gap: 20px;
     }
