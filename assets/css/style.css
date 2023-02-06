@@ -74,6 +74,7 @@ nav ul li:first-child {
 .jumbotron .container {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-around;
     padding: 0;
 }
 
@@ -84,6 +85,7 @@ nav ul li:first-child {
 .stats-wrapper {
     display: flex;
     flex-direction: column;
+    margin-right: 25px;
     margin-top: 25px;
 }
 
@@ -94,7 +96,6 @@ nav ul li:first-child {
 
 .stats-wrapper p span {
     font-weight: 500;
-
 }
 
 /* Right side */
@@ -108,8 +109,7 @@ nav ul li:first-child {
 }
 
 .lead {
-    max-width: 80%;
-    margin: 15px auto;
+    margin-top: 15px;
 }
 
 .to-fav-btn {
@@ -127,12 +127,6 @@ nav ul li:first-child {
 }
 
 /* 10 Crypto */
-/* .cards {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-auto-rows: auto;
-} */
-
 .cards {
     width: 95%;
     margin: 30px auto !important;
@@ -208,19 +202,7 @@ nav ul li:first-child {
         font-size: 0.9rem;
     }
 }
-#topNews {
-    overflow: scroll;
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    gap: 20px;
-    padding: 20px 0px;
-}
 
-.link-news-card {
-    min-width: 300px;
-}
 .saved-icon {
     color: red;
     animation-name: heartAnimation;
@@ -295,29 +277,55 @@ nav ul li:first-child {
     font-weight: bold;
     align-self: flex-end;
 }
-@media (max-width: 840px) {
+@media (max-width: 768px) {
     nav {
         background-color: var(--primary-color);
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    
-    nav ul {
-        padding: 10px !important;
-        list-style: none;
-        margin: 30px auto;
-    }
-    
-    nav ul li a {
-        color: #fff;
-        margin-top: 5px;
-    }
-    
-    nav ul li:first-child {
-        font-size: 1.8rem;
-        font-weight: 700;
-    }
-    
-}
+    .jumbotron .container {
+        display: flex;
 
+        flex-direction: column-reverse !important;
+        gap: 20px;
+    }
+    .stats-container {
+        padding: 20px;
+        width: 100%;
+        background: rgba(142, 134, 187, 0.19);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4.4px);
+        -webkit-backdrop-filter: blur(4.4px);
+        border: 1px solid rgba(142, 134, 187, 0.34);
+    }
+    .favourites-ad {
+        width: 100%;
+        padding: 20px;
+        border-left: none;
+        border-top: 1px solid #222;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background: rgba(142, 134, 187, 0.19);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4.4px);
+        -webkit-backdrop-filter: blur(4.4px);
+        border: 1px solid rgba(142, 134, 187, 0.34);
+    }
+    .jumbotron {
+        background: #fff;
+        width: 100%;
+        margin: 30px auto !important;
+        padding: 30px 20px;
+        border-radius: 0px;
+        box-shadow: none;
+        backdrop-filter: blur(4.4px);
+        -webkit-backdrop-filter: blur(4.4px);
+        border: none;
+    
+    }
+}
