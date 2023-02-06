@@ -227,7 +227,7 @@ nav ul li:first-child {
     display: flex;
     flex-direction: column;
     width: auto;
-    gap: 20px;
+    gap: 30px;
     padding: 20px 20px;
 }
 .card-new {
@@ -261,8 +261,8 @@ nav ul li:first-child {
     padding: 0px 15px;
 }
 .card-new-img {
-    width: 200px;
-    height: 150px;
+    width: 300px;
+    height: 200px;
     margin-left: 15px;
 }
 .link-news-card {
@@ -327,5 +327,86 @@ nav ul li:first-child {
         -webkit-backdrop-filter: blur(4.4px);
         border: none;
     
+    }
+    .card-middle-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.4rem !important;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .jumbotron {
+        padding: 20px 0px;
+    }
+    .jumbotron h4 {
+        text-align: center;
+    }
+    
+    .jumbotron .container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        padding: 0;
+    }
+    .cardsWrapper {
+        margin: 5px;
+    }
+    .card {
+        border-radius: 16px;
+        min-width: 280px;
+        background: rgba(142, 134, 187, 0.19);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4.4px);
+        -webkit-backdrop-filter: blur(4.4px);
+        border: 1px solid rgba(142, 134, 187, 0.34);
+    }
+    .cards-news-wrapper {
+        overflow: scroll;
+        height: 450px;
+        width: 100%;
+        width: 300px;
+    }
+    #topNews {
+        padding: 5px;
+    }
+    .card-new {
+        width: 280px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* From https://css.glass */
+        background: rgba(142, 134, 187, 0.19);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4.4px);
+        -webkit-backdrop-filter: blur(4.4px);
+        border: 1px solid rgba(142, 134, 187, 0.34);
+        margin-right: 50px;
+    }
+    .card-new-title {
+        font-size: 1.1rem;
+    }
+    .card-new-summary {
+        padding: 0px 15px;
+    }
+    .card-new-img {
+        width: 180px;
+        height: 130px;
+        margin-left: 0px;
+    }
+    #topNews {
+        margin-right: 10px;
+        padding: 0px;
+    }
+    .card-new-author {
+        font-weight: bold;
+        align-self: flex-end;
+        margin-right: 20px;
     }
 }
