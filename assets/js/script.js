@@ -72,7 +72,7 @@ function createCoinCard(coin, favourites) {
 // Function to render 10 coin cards. Takes an array of coins and appends each coin card to coins wrapper and then to the given parent element
 function renderCoinCards(coins, parentElement) {
 	//Get an array with favourites coins uuids from localStorage
-	const favourites = JSON.parse(localStorage.getItem('favourites'));
+	const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
 
 	//Create wrapper container for all cards
 	const cardsWrapperEl = $('<div>').addClass('cardsWrapper');
