@@ -21,7 +21,7 @@ async function displayCoins() {
 
 	} catch (error) {
 		// Display an error message to the end-user if the API call fails
-		console.error('An error occurred while fetching the data from the API: ');
+		console.error('An error occurred while fetching the data from the API: ', error.responseJSON.message);
 	}
 }
 
