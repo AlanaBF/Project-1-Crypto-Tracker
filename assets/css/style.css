@@ -216,7 +216,7 @@ nav ul li:first-child {
     width: 90vw;
     max-width: 1200px;
     height: 90vh;
-    background-color: antiquewhite;
+    background-color: var(--cards-color);
     overflow-y: scroll;
     margin: 30px auto;
     padding: 30px;
@@ -229,18 +229,45 @@ nav ul li:first-child {
     flex-direction: column;
     text-align: center;
 }
-#chart {
-    min-width: 90%;
-   min-height: 45%;
+
+.coin-modal-header h1,
+h2,
+h4 {
+    color: var(--primary-color)
 }
 
-.coin-modal-info{
+#chart {
+    min-width: 90%;
+    min-height: 45%;
+}
+
+.coin-modal-info {
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 0 30px;
 }
 
-.statistics-block  {
-    padding: 30px;
+.statistics-block {
+    padding-top: 40px;
+    min-width: 35%;
+}
+
+.statistics-block .subtitle {
+    padding: 1rem 0 1.5rem 0;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.info {
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #beb9b9;
+}
+
+.statistics-block span {
+    font-weight: 600;
 }
