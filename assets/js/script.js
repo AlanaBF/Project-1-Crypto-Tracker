@@ -42,7 +42,7 @@ function renderMarketStats(data) {
 		</div>
 `
 	// Append the HTML code to an container inside jumbotron
-	$('.jumbotron').children('.container').append(statsEl);
+	$('.jumbo-1').children('.container').append(statsEl);
 }
 
 
@@ -120,3 +120,15 @@ function saveToLS(e) {
 
 // Call the displayCoins() function to start the process
 displayCoins();
+
+//check local storage is empty
+function checkLocalStorage() {
+	//this is because we cannot remove the empty array
+	var fav = window.localStorage.getItem('favourites');
+	console.log(fav.length)
+	if(fav.length === 2) {
+		$('.jumbo-2').removeClass('hide');
+	} else if(fav.length > 2){
+		$('.jumbo-2').addClass('hide');
+	}
+}

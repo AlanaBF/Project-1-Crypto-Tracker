@@ -26,21 +26,36 @@ h4 {
 p {
     font-size: 1.1rem !important;
 }
-
+.jumbotron {
+    width: 95%;
+    margin: 30px auto !important;
+    padding: 30px 20px;
+        /* From https://css.glass */
+    background: rgba(142, 134, 187, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px);
+    border: 1px solid rgba(142, 134, 187, 0.34);
+}
 /* Error message on input */
 #error {
     color: red;
 }
-
 .hide {
     display: none;
+    opacity: none;
+    pointer-events: none;
 }
-
 /* Navbar */
 nav {
     background-color: var(--primary-color);
 }
-
+@media (min-width: 768px) {
+    nav {
+        height: 100vh !important;
+    }
+}
 nav ul {
     padding: 10px !important;
     list-style: none;
@@ -58,20 +73,7 @@ nav ul li:first-child {
 }
 
 /* Banner - Jumbotron */
-.jumbotron {
-    width: 95%;
-    margin: 30px auto !important;
-    padding: 30px 20px;
-        /* From https://css.glass */
-    background: rgba(142, 134, 187, 0.19);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.4px);
-    -webkit-backdrop-filter: blur(4.4px);
-    border: 1px solid rgba(142, 134, 187, 0.34);
-}
-
-.jumbotron .container {
+.jumbo-1 .container {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
@@ -112,20 +114,20 @@ nav ul li:first-child {
     margin-top: 15px;
 }
 
-.to-fav-btn {
+button {
     background-color: var(--primary-color);
     color: #fff;
     border: none;
     font-weight: 500;
-    padding: 8px 13px;
+    font-size: 1.2rem;
+    padding: 10px 15px;
     border-radius: 30px;
     align-self: center;
 }
 
-.to-fav-btn:hover {
+button:hover {
     box-shadow: var(--primary-shadow)
 }
-
 /* 10 Crypto */
 .cards {
     width: 95%;
@@ -277,6 +279,25 @@ nav ul li:first-child {
     font-weight: bold;
     align-self: flex-end;
 }
+/* Favourites page */
+.jumbo-2 {
+    width: 60%;
+}
+/* .jumbo-2, #favouritesContainer {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+.jumbo-2 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.jumbo-2 p {
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     nav {
         background-color: var(--primary-color);
@@ -284,7 +305,7 @@ nav ul li:first-child {
         justify-content: center;
         align-items: center;
     }
-    .jumbotron .container {
+    .jumbo-1 .container {
         display: flex;
 
         flex-direction: column-reverse !important;
@@ -316,7 +337,7 @@ nav ul li:first-child {
         -webkit-backdrop-filter: blur(4.4px);
         border: 1px solid rgba(142, 134, 187, 0.34);
     }
-    .jumbotron {
+    .jumbo-1 {
         background: #fff;
         width: 100%;
         margin: 30px auto !important;
@@ -340,14 +361,14 @@ nav ul li:first-child {
     p {
         font-size: 1rem;
     }
-    .jumbotron {
+    .jumbo-1 {
         padding: 20px 0px;
     }
-    .jumbotron h4 {
+    .jumbo-1 h4 {
         text-align: center;
     }
     
-    .jumbotron .container {
+    .jumbo-1 .container {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-around;
