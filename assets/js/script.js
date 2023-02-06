@@ -47,9 +47,12 @@ function renderMarketStats(data) {
 
 
 // Function to create a single coin card with the given coin data
-function createCoinCard(coin) {
+function createCoinCard(coin, favourites) {
 	// Destructure variables from the response
 	const { name, price, change, iconUrl, symbol, uuid, marketCap } = coin;
+	//Check if this coin uuid is in favourites array from localStorage
+	const isFavourite = favourites.includes(uuid);
+
 	// Return the HTML template for a single coin card
 	return `
     <div data-uuid='${uuid}' class="card">
@@ -60,21 +63,23 @@ function createCoinCard(coin) {
       <p>Price <span>$${Number(price).toFixed(2)}</span></p>
       <p>Daily Change <span>${change}%</span></p>
 			<p>Market Cap <span>$${formatter.format(marketCap)}</span></p>
-	<i class="fav-link fa-solid fa-heart" data-uuid='${uuid}'></i>
+	    <i class="fav-link fa-solid fa-heart ${isFavourite ? 'saved-icon' : ''}" data-uuid='${uuid}'></i>
     </div>
   `;
 }
-// change from card link to icon
-// <a href="#" class="card-link" data-uuid='${uuid}'>Add to favourites</a>
+
 
 // Function to render 10 coin cards. Takes an array of coins and appends each coin card to coins wrapper and then to the given parent element
 function renderCoinCards(coins, parentElement) {
+	//Get an array with favourites coins uuids from localStorage
+	const favourites = JSON.parse(localStorage.getItem('favourites'));
+
 	//Create wrapper container for all cards
 	const cardsWrapperEl = $('<div>').addClass('cardsWrapper');
 
 	// Loop through the array of all coins and create a card for each coin
 	coins.forEach(function (coin) {
-		const coinCard = createCoinCard(coin);
+		const coinCard = createCoinCard(coin, favourites);
 		// Append the coin card to the cards wrapper
 		cardsWrapperEl.append(coinCard);
 	});
@@ -100,9 +105,12 @@ function saveToLS(e) {
 	if (isFavourite) {
 		// If the UUID is already in the favourites, remove it from the list
 		favourites = favourites.filter(uuid => uuid !== currentCardUuid);
+		//Remove styles from heart icon
+		$(this).removeClass('saved-icon');
 	} else {
 		// If the UUID is not in the favourites, add it to the list
 		favourites = [...favourites, currentCardUuid];
+		$(this).addClass('saved-icon');
 	}
 
 	// Save to local storage
