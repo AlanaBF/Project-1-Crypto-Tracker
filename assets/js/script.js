@@ -10,19 +10,19 @@
 let formatter = Intl.NumberFormat('en', { notation: 'compact' });
 
 async function displayCoins() {
+	let response;
 	try {
 		// Get data from API by calling the getListOfCoins() function
-		const response = await getListOfCoins();
+		 response = await getListOfCoins();
 		//Render general market stats to jumbotron
-		renderMarketStats(response.data.stats);
-		// Render 10 coin cards by passing the coins and parent element to the renderCoinCards() function
-		renderCoinCards(response.data.coins, $("#top10"));
-
-
 	} catch (error) {
 		// Display an error message to the end-user if the API call fails
 		console.error('An error occurred while fetching the data from the API: ', error.responseJSON.message);
 	}
+
+	renderMarketStats(response.data.stats);
+	// Render 10 coin cards by passing the coins and parent element to the renderCoinCards() function
+	renderCoinCards(response.data.coins, $("#top10"));
 }
 
 //Function to create general market stats block
@@ -120,14 +120,4 @@ function saveToLS(e) {
 // Call the displayCoins() function to start the process
 displayCoins();
 
-//check local storage is empty
-function checkLocalStorage() {
-	//this is because we cannot remove the empty array
-	var fav = window.localStorage.getItem('favourites') || [];
-	console.log(fav.length)
-	if(fav.length === 2) {
-		$('.jumbo-2').removeClass('hide');
-	} else if(fav.length > 2){
-		$('.jumbo-2').addClass('hide');
-	}
-}
+
