@@ -197,3 +197,17 @@ nav ul li:first-child {
     animation-name: heartAnimation;
     animation-duration: 0.4s;
 }
+/* News section */
+#topNews {
+    overflow: scroll;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.link-news-card {
+    min-width: 300px;
+}
