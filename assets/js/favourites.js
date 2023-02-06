@@ -16,6 +16,7 @@ async function displayCoins() {
 
 // Define a function to render the list of favourite coins
 function renderFavourites(coins) {
+  checkLocalStorage();
   // Get the list of favourite coins UUIDs from local storage, or an empty array if it doesn't exist
   const favouritesUuids = JSON.parse(localStorage.getItem('favourites')) || [];
 
