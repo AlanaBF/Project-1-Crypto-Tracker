@@ -1,7 +1,8 @@
 
 const uuid = 'Qwsogvtv82FCd';
 
-async function displayCoinDetails() {
+// displayCoinDetails();
+async function displayCoinDetails(uuid) {
 
   const coinHistoryRes = await getCoinPriceHistory(uuid);
   const coinDetailsRes = await getOneCoin(uuid);
@@ -9,9 +10,7 @@ async function displayCoinDetails() {
   await $('body').prepend(createCoinModal(coinDetailsRes.data.coin));
   drawGraph(coinHistoryRes, 'chart')
 
-  console.log(coinDetailsRes)
-
-
+  document.body.addEventListener('click', closeModal);
 }
 
 function createCoinModal(coin) {
@@ -21,6 +20,7 @@ function createCoinModal(coin) {
   const coinModal = `
   <div class="coin-modal" id="coinModal">
       <div class="coin-modal-inner" id="coinModalInner">
+        <i class="far fa-times-circle closeIcon"></i>
           <div class="coin-modal-header">
               <h1>${name} (${symbol}) </h1>
               <p>
@@ -83,20 +83,26 @@ function createOtherStatsBlock(coin) {
 }
 
 function createCoinLinks(links) {
-  let comb = '';
+  let cards = '';
 
   links.forEach(link => {
-    const { type, url, name } = link;
+    const { type, url, name } = link;ƒ
 
-    comb += `
+    cards += `
         <div class='info'>
           <p>${type}</p>
           <a href='${url}' target='_blank ref='no-referrer'>${name}</a>
         </div>
         `
   });
-  return comb;
+  return cards;
 }
 
 
-displayCoinDetails();
+function closeModal(e) {
+  if (e.target.classList.contains('closeIcon') || !e.target.closest('#coinModalInner')) {
+    $('body').removeClass('fixed');
+    document.body.removeEventListener('click', closeModal);
+    $('#coinModal').remove();
+  }
+}

@@ -209,7 +209,6 @@ nav ul li:first-child {
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
     z-index: 1001;
-
 }
 
 .coin-modal-inner {
@@ -222,6 +221,7 @@ nav ul li:first-child {
     padding: 30px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .coin-modal-header {
@@ -270,4 +270,17 @@ h4 {
 
 .statistics-block span {
     font-weight: 600;
+}
+
+.closeIcon {
+    position: sticky;
+    top: 5px;
+    color: red;
+    z-index: 9999;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.fixed {
+    position: fixed;
 }
