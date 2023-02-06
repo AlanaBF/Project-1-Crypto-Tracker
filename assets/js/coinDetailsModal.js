@@ -51,7 +51,7 @@ function createCoinStatsBlock(coin) {
 
   return `
     <div class="statistics-block">
-      <h2> ${name} Value Statisstics</h2>
+      <h2> ${name} Value Statistics</h2>
       <span class='subtitle'>An overview showing the statistics of the Bitcoin</span>
       <div class='info'><p>Price to USD:</p> <span>$${Number(price).toFixed(2)}</span></div>
       <div class='info'><p>Rank: </p> <span>${rank}</span></div>
@@ -67,11 +67,11 @@ function createOtherStatsBlock(coin) {
 
   return `
     <div class="statistics-block">
-      <h2> Other Statisstics</h2>
+      <h2> Other Statistics</h2>
       <span class='subtitle'>An overview showing the statistics of the Bitcoin</span>
       <div class='info'><p>Number Of Markets:</p> <span>${numberOfMarkets}</span></div>
       <div class='info'><p>Number Of Exchanges: </p> <span>${numberOfExchanges}</span></div>
-      <div class='info'><p>Aprroved Supply:</p> <span>${supply.confirmed ? 'Yes' : 'No'}</span></div>
+      <div class='info'><p>Approved Supply:</p> <span>${supply.confirmed ? 'Yes' : 'No'}</span></div>
       <div class='info'><p>Market cap:</p> <span>$${formatter.format(supply.total)}</span></div>
       <div class='info'><p>Max Supply:</p> <span>$${formatter.format(supply.max)}</span></div>
     </div>
