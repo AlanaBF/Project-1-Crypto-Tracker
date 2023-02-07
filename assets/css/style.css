@@ -210,6 +210,101 @@ button:hover {
     animation-name: heartAnimation;
     animation-duration: 0.4s;
 }
+
+
+
+
+/* CoinModalDetails styles */
+
+.coin-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+.coin-modal-inner {
+    width: 90vw;
+    max-width: 1200px;
+    height: 90vh;
+    background-color: #fff;
+    overflow-y: scroll;
+    margin: 30px auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.coin-modal-header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.coin-modal-header h1,
+h2,
+h4 {
+    color: var(--primary-color)
+}
+
+#chart {
+    min-width: 90%;
+    min-height: 45%;
+}
+
+.coin-modal-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 30px;
+}
+
+.statistics-block {
+    padding-top: 40px;
+    min-width: 35%;
+}
+
+.statistics-block .subtitle {
+    padding: 1rem 0 1.5rem 0;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.info {
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #beb9b9;
+}
+
+.statistics-block span {
+    font-weight: 600;
+}
+
+.links-block {
+    width: 100%;
+    max-width: 500px;
+}
+
+
+.closeIcon {
+    position: sticky;
+    top: 5px;
+    color: red;
+    z-index: 9999;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex !important;
+    justify-content: end !important;
+}
+
+.modal-open {
+    overflow: hidden;
+}
 /* News section */
 .cards-news-wrapper {
     overflow: scroll;

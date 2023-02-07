@@ -46,11 +46,11 @@ async function getOneCoin(UUID) {
 
 
 //Get iformation for the chart
-async function getCoinPriceHistory() {
+async function getCoinPriceHistory(UUID) {
 	const settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": `${baseUrl}coin/Qwsogvtv82FCd/history?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h`,
+		"url": `${baseUrl}coin/${UUID}/history?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h`,
 		"method": "GET",
 		"headers": {
 			"X-RapidAPI-Key": API_KEY,

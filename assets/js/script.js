@@ -23,6 +23,8 @@ async function displayCoins() {
 	renderMarketStats(response.data.stats);
 	// Render 10 coin cards by passing the coins and parent element to the renderCoinCards() function
 	renderCoinCards(response.data.coins, $("#top10"));
+	
+	$('.cardsWrapper').on('click', '.coinCard', openModal);
 }
 
 //Function to create general market stats block
@@ -31,7 +33,7 @@ function renderMarketStats(data) {
 	const { totalCoins, totalMarkets, totalMarketCap, total24hVolume } = data;
 	// Create a string of HTML code using the extracted values
 	const statsEl = `
-		<div class="stats-container">
+		<div  class="stats-container">
 				<h4>Market Statistics</h4>
 				<div class="stats-wrapper" style='display: flex; justify-content: space-between;'>
 						<p>Total Criptocurrencies: <span>${totalCoins}</span></p>
@@ -55,7 +57,7 @@ function createCoinCard(coin, favourites) {
 
 	// Return the HTML template for a single coin card
 	return `
-    <div data-uuid='${uuid}' class="card">
+    <div data-uuid='${uuid}' class="card coinCard">
       <div class='card-header'>
         <h4>${name}</h4>
         <img class='coin-icon' width='30px' src='${iconUrl}' alt='${symbol} icon'/>
@@ -73,6 +75,7 @@ function createCoinCard(coin, favourites) {
 function renderCoinCards(coins, parentElement) {
 	//Get an array with favourites coins uuids from localStorage
 	const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+
 	//Create wrapper container for all cards
 	const cardsWrapperEl = $('<div>').addClass('cardsWrapper');
 
@@ -115,6 +118,21 @@ function saveToLS(e) {
 	// Save to local storage
 	localStorage.setItem("favourites", JSON.stringify(favourites));
 }
+
+
+
+//Function for each coin card to open coinDetailModal
+
+function openModal(e) {
+	//If clicked on heart inside card don't do anything
+	if (e.target.classList.contains('fav-link')) return
+
+	const uuid = $(this).attr('data-uuid');
+	$('body').addClass("modal-open");
+	displayCoinDetails(uuid);
+}
+
+
 
 
 // Call the displayCoins() function to start the process
