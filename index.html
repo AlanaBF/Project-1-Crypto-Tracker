@@ -9,6 +9,11 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://kit.fontawesome.com/201aa93ea7.js" crossorigin="anonymous"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets//images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
     <title>Crypto Tracker</title>
 </head>
 
@@ -33,7 +38,7 @@
             </nav>
             <!-- main jumbotron header-->
             <main class="col-md-9">
-                <div class="jumbotron jumbotron-fluid">
+                <div class="jumbotron jumbo-1 jumbotron-fluid">
 
                     <div class="container">
                         <div class="favourites-ad">
@@ -52,7 +57,7 @@
                                 quick access to investment information. Track the latest prices and performance with our
                                 charts. Take control of your crypto journey now!
                             </p>
-                            <button class="to-fav-btn">Favourites</button>
+                            <a href="assets/html/favourites.html"><button class="to-fav-btn">Favourites</button></a>
                         </div>
                     </div>
 
@@ -65,15 +70,24 @@
                 </div>
 
                 <!-- div for the top 6 news articles about crypto currencies-->
-                <div class="news" id="topNews">
-                    News
+                <div class="cards">
+
+                    <h2>Top Crypto News</h2>
+                    <div class="cards-news-wrapper">
+                        <div class="news" id="topNews">
+                        </div>
+                    </div>
                 </div>
+
 
 
             </main>
         </div>
     </div>
-
+    <div>
+        <class="footer">
+            <h3>Designed with ❤️️ by Aleksandr Riabov, Ainhoa Prada, Alana Barrett-Frew, Adrian Kosnik</h3>
+            <p>&copy; Crypto Tracker 2023</p>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/services/coins.js"></script>
