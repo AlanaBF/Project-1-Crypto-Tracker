@@ -179,9 +179,19 @@ button:hover {
   border-radius: 10px;
   width: 40px;
 }
-
-.cardsWrapper {
+/* This is for the top 10 on the home page, so we keep scroll */
+#top10 .cardsWrapper {
   display: flex;
+  flex-direction: row;
+  width: auto;
+  gap: 30px;
+  padding: 20px 0px;
+  margin: 0px 10px;
+}
+/* This is for the crypto-currency page so all the cards wrap */
+#cardsContainer .cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   width: auto;
   gap: 30px;
