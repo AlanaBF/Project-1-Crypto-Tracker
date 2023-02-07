@@ -18,14 +18,6 @@ async function displayCoins() {
 function renderFavourites(coins) {
   // Get the list of favourite coins UUIDs from local storage, or an empty array if it doesn't exist
   const favouritesUuids = JSON.parse(localStorage.getItem('favourites')) || [];
-
-  // Display or hide Jumbotron depending if there are any favorites saved in localStorage
-  if (!favouritesUuids.length) {
-    $('.jumbo-2').removeClass('hide');
-  } else {
-    $('.jumbo-2').addClass('hide');
-  }
-
   // Filter the list of all coins to only include those that are marked as favourites
   const filteredFavourites = coins.filter(coin => favouritesUuids.includes(coin.uuid));
 
@@ -40,8 +32,8 @@ function renderFavourites(coins) {
   if (filteredFavourites.length) {
     $('#favouritesContainer').on("click", '.fav-link', () => renderFavourites(coins));
   } else {
-    // If there are no favourite coins, display a message to the user
-    $('#favouritesContainer').text("Hmm.. Looks like you don't have any favourite coins yet..")
+    // If there are no favourite coins, display a jumbotron to the user
+    $('.jumbo-2').removeClass('hide');
   }
 
 }
