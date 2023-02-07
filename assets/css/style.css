@@ -182,6 +182,7 @@ button:hover {
 
 .cardsWrapper {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   width: auto;
   gap: 30px;
