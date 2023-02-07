@@ -165,7 +165,6 @@ function createNewsCards(articles, container) {
             var author = $('<p class="card-new-author">');
             var image = $('<img class= "card-new-img">');
             var middleWrap = $('<div class="card-middle-wrap">');
-            linkwraper.append(cardNew);
             title.text(articles[i].title);
             summary.text(articles[i].summary);
             author.text('-' + articles[i].author);
@@ -178,6 +177,7 @@ function createNewsCards(articles, container) {
             cardNew.append(title);
             cardNew.append(middleWrap);
             cardNew.append(author);
+            linkwraper.append(cardNew);
             container.append(linkwraper);
         }
 }
