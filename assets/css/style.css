@@ -162,7 +162,7 @@ button:hover {
 
 .card {
     border-radius: 16px;
-    width: 300px;
+    min-width: 300px;
     background: rgba(142, 134, 187, 0.19);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4.4px);
@@ -387,14 +387,14 @@ h4 {
 .jumbo-2 p {
     text-align: center;
 }
-#favouritesContainer {
+/* #favouritesContainer {
     width: 100%;
     margin-top: 30px;
 }
 #favouritesContainer h2 {
     text-align: center;
 }
-.cardsWrapper {
+.wraping {
     width: 100%;
     margin: 30px auto;
     padding: 10px;
@@ -402,7 +402,7 @@ h4 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
+} */
 @media (max-width: 768px) {
     nav {
         background-color: var(--primary-color);
