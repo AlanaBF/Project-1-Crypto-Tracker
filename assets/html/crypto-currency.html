@@ -37,31 +37,30 @@
                     </li>
                 </ul>
             </nav>
-
             <!-- display currencies-->
             <main class="col-md-9">
                 <div class="jumbotron jumbotron-fluid jumbo-2">
-
                     <div class="container">
-                        <h1 class="display-4">Crypto-Currency</h1>
+                        <h2 class="display-4">Crypto-Currencies</h2>
                         <p class="lead">
-                            Search for a Crypto-Currency.
+                            Search for a Crypto Currency!
                         </p>
-                    </div>
-                    <form id="search-form" class="form">
-                        <div class="form-inline form-group">
-                            <div class="input-group">
-                                <input class="form-input coin-search" type="text" id="search-input" placeholder="BTC"
-                                    aria-labelledby="form-heading" />
+                        <form id="search-form" class="form">
+                            <div class="form-inline form-group">
                                 <div class="input-group">
-                                    <button type="submit" class="search-button" id="search-button"
-                                        aria-label="submit search">
-                                        Search
-                                    </button>
+                                    <input class="input-group form-input coin-search" type="text" id="search-input"
+                                        placeholder="BTC" aria-labelledby="form-heading" />
+                                    <p id="error" class="hide">Not found</p>
+                                    <div class="input-group">
+                                        <button type="submit" class="search-button" id="search-button"
+                                            aria-label="submit search">
+                                            Search
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
 
                 <!-- div for crypto currencies cards-->
