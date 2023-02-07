@@ -30,6 +30,8 @@ function renderFavourites(coins) {
   // If there are any favourite coins, add a click event to the container
   // This event will re-render the favourites when a coin card is clicked (Delegated to parrent container)
   if (filteredFavourites.length) {
+    //adds the title when there are coins selected on favourites
+    addHeading();
     $('#favouritesContainer').on("click", '.fav-link', () => renderFavourites(coins));
   } else {
     // If there are no favourite coins, display a jumbotron to the user
@@ -40,3 +42,10 @@ function renderFavourites(coins) {
 
 // Call the displayCoins function to start the process
 displayCoins();
+
+//render section title on favourites
+function addHeading() {
+  var h2 = $('<h2 class="fav-heading">');
+  h2.text('Your Favourite Cryptocurrencies');
+  $('#favouritesContainer').prepend(h2);
+}
