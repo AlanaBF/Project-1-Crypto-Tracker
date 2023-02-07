@@ -48,14 +48,35 @@ p {
     pointer-events: none;
 }
 /* Navbar */
+#mobile-nav {
+    width: 100vw;
+    background-color: var(--primary-color);
+}
+
+#mobile-nav * {
+    color: #fff;
+}
+
 nav {
     background-color: var(--primary-color);
 }
-@media (min-width: 768px) {
+
+@media (max-width: 768px) {
+    #normal-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    #mobile-nav {
+        display: none;
+    }
+
     nav {
         height: 180vh !important;
     }
 }
+
 nav ul {
     padding: 10px !important;
     list-style: none;
