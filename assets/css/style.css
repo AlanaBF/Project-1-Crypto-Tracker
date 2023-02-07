@@ -69,17 +69,20 @@ nav {
     #mobile-nav {
         display: none;
     }
-
-    nav {
+    /* Removing this fixes the issue with the nav bar not streaching
+       far down enough in certain situations */
+    /* nav {
         height: 180vh !important;
-    }
+    } */
 }
 
-@media (min-width: 768px) {
+    /* Removing this fixes the issue with the nav bar not streaching
+       far down enough in certain situations */
+/* @media (min-width: 768px) {
   nav {
     height: 250vh !important;
   }
-}
+} */
 
 nav ul {
   padding: 10px !important;
