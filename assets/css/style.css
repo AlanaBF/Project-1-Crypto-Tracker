@@ -191,6 +191,7 @@ button:hover {
 /* This is for the crypto-currency page so all the cards wrap */
 #cardsContainer .cardsWrapper {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
   width: auto;
