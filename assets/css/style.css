@@ -263,19 +263,29 @@ button:hover {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  color: #fff;
   z-index: 1001;
+
 }
 .coin-modal-inner {
   width: 90vw;
   max-width: 1200px;
   height: 90vh;
   background-color: #fff;
+  color: #fff;
   overflow-y: scroll;
   margin: 30px auto;
   padding: 30px;
   display: flex;
   flex-direction: column;
   position: relative;
+  /* From https://css.glass */
+  background: rgba(142, 134, 187, 0.19);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.4px);
+  -webkit-backdrop-filter: blur(4.4px);
+  border: 1px solid rgba(142, 134, 187, 0.34);
 }
 
 .coin-modal-header {
@@ -284,15 +294,20 @@ button:hover {
   text-align: center;
 }
 
-.coin-modal-header h1,
-h2,
+/* there is a syntax error here in the main file, get
+rid of the " , " */
+.coin-modal-header h1
+h2
 h4 {
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  color: #fff;
 }
 
 #chart {
   min-width: 90%;
   min-height: 45%;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
 }
 
 .coin-modal-info {
@@ -320,6 +335,10 @@ h4 {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #beb9b9;
+}
+
+.info a {
+  color: #fff;
 }
 
 .statistics-block span {
