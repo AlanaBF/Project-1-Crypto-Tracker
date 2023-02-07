@@ -162,7 +162,7 @@ button:hover {
 
 .card {
     border-radius: 16px;
-    min-width: 300px;
+    width: 300px;
     background: rgba(142, 134, 187, 0.19);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4.4px);
@@ -378,11 +378,6 @@ h4 {
 .jumbo-2 {
     width: 60%;
 }
-/* .jumbo-2, #favouritesContainer {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
 .jumbo-2 .container {
     display: flex;
     flex-direction: column;
@@ -392,7 +387,22 @@ h4 {
 .jumbo-2 p {
     text-align: center;
 }
-
+#favouritesContainer {
+    width: 100%;
+    margin-top: 30px;
+}
+#favouritesContainer h2 {
+    text-align: center;
+}
+.cardsWrapper {
+    width: 100%;
+    margin: 30px auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 @media (max-width: 768px) {
     nav {
         background-color: var(--primary-color);
@@ -451,7 +461,10 @@ h4 {
 }
 @media (max-width: 480px) {
     h2 {
-        font-size: 1.4rem !important;
+        font-size: 1.6rem !important;
+    }
+    h4 {
+        font-size: 1.3rem !important;
     }
     p {
         font-size: 1rem;
