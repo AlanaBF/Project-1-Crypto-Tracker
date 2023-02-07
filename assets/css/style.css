@@ -602,3 +602,7 @@ h4 {
   color: #fff;
   text-decoration: underline;
 }
+
+.logo {
+  font-family: 'Cinzel', serif;
+}
