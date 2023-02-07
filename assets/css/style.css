@@ -53,7 +53,7 @@ nav {
 }
 @media (min-width: 768px) {
     nav {
-        height: 100vh !important;
+        height: 180vh !important;
     }
 }
 nav ul {
@@ -486,6 +486,9 @@ h4 {
         height: 450px;
         width: 100%;
         width: 300px;
+        padding-right: 0px;
+        margin: 0 auto;
+        margin-top: 30px;
     }
     #topNews {
         padding: 5px;
