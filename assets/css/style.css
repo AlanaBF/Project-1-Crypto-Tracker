@@ -163,6 +163,7 @@ button:hover {
 .card {
     border-radius: 16px;
     min-width: 300px;
+    max-width: 300px;
     background: rgba(142, 134, 187, 0.19);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4.4px);
