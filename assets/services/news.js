@@ -158,7 +158,7 @@ function createNewsCards(articles, container) {
         for( var i = 0; i < articles.length; i++) {
             var link = articles[i].link;
             var img = articles[i].media;
-            var linkwraper = $(`<a class="link-news-card" href="${link}">`);
+            var linkwraper = $(`<a class="link-news-card" target="_blank" href="${link}">`);
             var cardNew = $('<div class="card-new">');
             var title = $('<h4 class="card-new-title">');
             var summary = $('<p class="card-new-summary">');
