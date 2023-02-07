@@ -33,6 +33,7 @@ function renderFavourites(coins) {
     //adds the title when there are coins selected on favourites
     addHeading();
     $('#favouritesContainer').on("click", '.fav-link', () => renderFavourites(coins));
+    $('#favouritesContainer .cardsWrapper').attr('class', 'wraping');
   } else {
     // If there are no favourite coins, display a jumbotron to the user
     $('.jumbo-2').removeClass('hide');
