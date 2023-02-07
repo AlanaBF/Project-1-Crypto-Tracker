@@ -23,6 +23,8 @@ async function displayCoins() {
 	renderMarketStats(response.data.stats);
 	// Render 10 coin cards by passing the coins and parent element to the renderCoinCards() function
 	renderCoinCards(response.data.coins, $("#top10"));
+	
+	$('.cardsWrapper').on('click', '.coinCard', openModal);
 }
 
 //Function to create general market stats block
@@ -124,6 +126,7 @@ function saveToLS(e) {
 function openModal(e) {
 	//If clicked on heart inside card don't do anything
 	if (e.target.classList.contains('fav-link')) return
+
 	const uuid = $(this).attr('data-uuid');
 	$('body').addClass("modal-open");
 	displayCoinDetails(uuid);
