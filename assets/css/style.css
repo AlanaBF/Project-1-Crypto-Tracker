@@ -211,6 +211,10 @@ button:hover {
   border: 1px solid rgba(142, 134, 187, 0.34);
 }
 
+.coinCard {
+  cursor: pointer;
+}
+
 .card-header {
   display: flex;
   padding: 10px 20px;
