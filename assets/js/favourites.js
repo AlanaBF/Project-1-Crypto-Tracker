@@ -46,6 +46,6 @@ displayCoins();
 //render section title on favourites
 function addHeading() {
   var h2 = $('<h2 class="fav-heading">');
-  h2.text('Your Favourite Cryptocurrencies');
+  h2.text('My Favourite Cryptocurrencies');
   $('#favouritesContainer').prepend(h2);
 }
