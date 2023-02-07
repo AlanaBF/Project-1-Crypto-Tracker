@@ -53,23 +53,29 @@
             </nav>
             <!-- display currencies-->
             <main class="col-md-9">
-                <div class="header">
-                    <h2>Crypto Currencies</h2>
-                </div>
-                <form id="search-form" class="form">
-                    <div class="form-inline form-group">
-                        <div class="input-group">
-                            <input class="form-input coin-search" type="text" id="search-input" placeholder="BTC"
-                                aria-labelledby="form-heading" />
-                            <div class="input-group">
-                                <button type="submit" class="btn search-button btn-primary" id="search-button"
-                                    aria-label="submit search">
-                                    Search
-                                </button>
+                <div class="jumbotron jumbotron-fluid jumbo-2">
+                    <div class="container">
+                        <h2 class="display-4">Crypto-Currencies</h2>
+                        <p class="lead">
+                            Search for a Crypto Currency!
+                        </p>
+                        <form id="search-form" class="form">
+                            <div class="form-inline form-group">
+                                <div class="input-group">
+                                    <input class="input-group form-input coin-search" type="text" id="search-input"
+                                        placeholder="BTC" aria-labelledby="form-heading" />
+                                    <p id="error" class="hide">Not found</p>
+                                    <div class="input-group">
+                                        <button type="submit" class="search-button" id="search-button"
+                                            aria-label="submit search">
+                                            Search
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                </form>
+                </div>
 
                 <!-- div for crypto currencies cards-->
                 <div class="cards">
@@ -87,6 +93,9 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../services/coins.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.0/dist/chart.umd.min.js"></script>
+    <script src="../js/crypto-graph.js"></script>
+    <script src="../js/coinDetailsModal.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/cryptoCurrencies.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>

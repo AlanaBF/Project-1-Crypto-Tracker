@@ -27,8 +27,6 @@ function renderFavourites(coins) {
   // Render the filtered list of favourite coins
   renderCoinCards(filteredFavourites, $("#favouritesContainer"));
 
-  // If there are any favourite coins, add a click event to the container
-  // This event will re-render the favourites when a coin card is clicked (Delegated to parrent container)
   if (filteredFavourites.length) {
     //adds the title when there are coins selected on favourites
     addHeading();

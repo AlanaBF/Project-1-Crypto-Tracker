@@ -1,3 +1,5 @@
+let isModalOpen = false;
+
 async function displayCoinDetails(uuid) {
 
   const coinHistoryRes = await getCoinPriceHistory(uuid);
@@ -95,10 +97,31 @@ function createCoinLinks(links) {
 }
 
 
+//Function to open coinDetailModal with the info for clicked card
+function openModal(e) {
+	//If clicked on heart inside the card, or modal is already opened don't do anything. 
+	if (e.target.classList.contains('fav-link') || isModalOpen) return
+	//Change  modal flag status
+	isModalOpen = true;
+	//Get uuid from clicked card 
+	const uuid = $(this).attr('data-uuid');
+	//Add class to body to remove scroll 
+	$('body').addClass("modal-open");
+	//Open modal with info for the coin with this uuid
+	displayCoinDetails(uuid);
+}
+
+// Function to close modal
 function closeModal(e) {
-  if (e.target.classList.contains('closeIcon') || !e.target.closest('#coinModalInner')) {
-    $('body').removeClass('modal-open');
-    document.body.removeEventListener('click', closeModal);
-    $('#coinModal').remove();
-  }
+	//Check if clicked outside modal or on close icon then run the code
+	if (e.target.classList.contains('closeIcon') || !e.target.closest('#coinModalInner')) {
+		//Change modal flag status
+		isModalOpen = false;
+		//Add scroll functionality for body element
+		$('body').removeClass('modal-open');
+		//Remove event listener as nmodal is closed
+		document.body.removeEventListener('click', closeModal);
+		//Remove modal from the page
+		$('#coinModal').remove();
+	}
 }
