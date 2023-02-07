@@ -8,14 +8,13 @@ function drawGraph(responseArray, canvasId) {
     let labelDates = [];
     let priceDataSets = [];
 
-    for(let i = 0; i < responseArray.data.history.length; i++) {
+    for (let i = 0; i < responseArray.data.history.length; i++) {
         priceDataSets.push(responseArray.data.history[i].price);
 
         // Converting UTC seconds to normal date - https://java2blog.com/convert-epoch-time-to-date-javascript/
         let utcSeconds = responseArray.data.history[i].timestamp;
-        let date = new Date(utcSeconds*1000);
-        let resultFormat = date.toISOString().split('T')[0]
-        labelDates.push(resultFormat);
+        let date = new Date(utcSeconds * 1000).toLocaleDateString("en-uk");
+        labelDates.push(date);
     };
 
     // This is what is needed to build the chart
@@ -26,11 +25,11 @@ function drawGraph(responseArray, canvasId) {
     new Chart(context, {
         type: 'line',
         data: {
-            labels: labelDates,
+            labels: labelDates.reverse(),
             datasets: [
                 {
                     label: 'Price in USD',
-                    data: priceDataSets
+                    data: priceDataSets.reverse()
                 }
             ]
         }
