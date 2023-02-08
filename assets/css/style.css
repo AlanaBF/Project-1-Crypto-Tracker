@@ -71,7 +71,7 @@ a:hover {
 nav {
   background-color: var(--primary-color);
   z-index: 33;
-
+  padding: 0 !important;
 }
 @media (max-width: 768px) {
   #normal-nav {
@@ -87,17 +87,38 @@ nav ul {
   padding: 10px !important;
   list-style: none;
   margin: 30px auto;
-  position: fixed;
+  width: 100%;
 }
 nav ul li a {
   color: #fff;
   margin-top: 5px;
 }
-nav ul li:first-child {
-  font-size: 1.8rem;
-  font-weight: 700;
+nav ul li a:hover {
+  text-shadow: 0px 2px 6px #1d1a2e;
+  scale: 1.05;
+  color: #ffffff;
 }
-
+.logo {
+  font-family: 'Cinzel', serif;
+  max-width: 100%;
+  font-size: 158%;
+  padding: 0;
+  margin: 0;
+  text-shadow: 0px 1px 6px #1d1a2e;
+}
+@media (min-width: 1300px) {
+  .logo {
+    font-size: 190%;
+  }
+}
+@media(max-width: 1115px) {
+  .logo {
+    font-size: 17px !important;
+  }
+}
+.logo img {
+  margin-right: 5px;
+}
 /* Banner - Jumbotron */
 .jumbo-1 .container {
   display: flex;
@@ -165,7 +186,7 @@ button:hover {
 }
 .top-10::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 .cardsWrapper {
@@ -406,7 +427,7 @@ h4 {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4; /* number of lines to show */
   line-height: 1.5rem;  /* fallback */
-  max-height: 6rem;    
+  max-height: 6rem;
 }
 
 /* to add cards in a row -> display colum gap 20px */
@@ -596,7 +617,7 @@ h4 {
   #topNews {
     margin-right: 10px;
     padding: 0px;
-  } 
+  }
   .card-new-author {
     font-weight: bold;
     align-self: flex-end;
@@ -609,7 +630,7 @@ h4 {
   /* News page */
   #cardsNewsContainer {
     height: 600px;
-    
+
   }
 }
 
@@ -628,10 +649,7 @@ h4 {
   text-decoration: underline;
 }
 
-.logo {
-  font-family: 'Cinzel', serif;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
 /* Loading spinner */
 #spinner{
   position: fixed;
@@ -647,7 +665,7 @@ h4 {
 }
 .spinner-circle {
   background: #fff;
-  width: 3rem; 
+  width: 3rem;
   height: 3rem;
 }
 /* ======= */
@@ -667,7 +685,7 @@ h4 {
   80%   { opacity: 0.6; }
   100%  { opacity: 1; }
 }
-main {  
+main {
   /* This section calls the slideInFromLeft animation we defined above */
   animation: 1.5s ease-out 0s 1 slideInFromLeft;
 }
