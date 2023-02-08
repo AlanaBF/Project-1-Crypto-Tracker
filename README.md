@@ -1,7 +1,7 @@
 # Project-1 - Crypto Tracker
-A collaborative project that primarily focuses on using bootstrap, 2 server side API's, is interactive and responsive. It is a web application that runs in the browser and features dynamically updated HTML and CSS.
+A collaborative project that primarily focuses on using bootstrap, 2 server side API's; News Catcher and Coin Ranking, is interactive and responsive. It is a web application that runs in the browser and features dynamically updated HTML and CSS.
 
-The application itself aims to allow users to view up to date Crypto Currencies and make informed decisions as an investor or potential investor. It displays the top 10 currencies and the 3 most current news articles on Crypto Currency on the main page. There is the option to append currencies relevant to what the user would like to single out and keep a closer eye on to the favourites page. There are two other pages; News and Crypto Currencies that display more options with greater content.
+The application itself aims to allow users to view up to date Crypto Currencies and make informed decisions as an investor or potential investor. It displays the top 10 currencies and the most current news articles on Crypto Currency on the main page. There is the option to append currencies relevant to what the user would like to single out and keep a closer eye on to the favourites page. There are two other pages; News and Crypto Currencies that display more options with greater interactive content.
 
 <https://alanabf.github.io/Project-1-Crypto-Tracker/> 
 
@@ -12,25 +12,25 @@ You'll write your own user stories and acceptance criteria in GitHub Issues to h
 
 The user story and acceptance criteria will depend on the project that you create, but your project must fulfill the following requirements:
 
-*Use Bootstrap.
+* Use Bootstrap.
 
-*Be deployed to GitHub Pages.
+* Be deployed to GitHub Pages.
 
-*Be interactive (in other words, accept and respond to user input).
+* Be interactive (in other words, accept and respond to user input).
 
-*Use at least two server-side APIs Links to an external site.
+* Use at least two server-side APIs Links to an external site.
 
-*Use modals instead of alerts, confirms, or prompts.
+* Use modals instead of alerts, confirms, or prompts.
 
-*Use client-side storage to store persistent data.
+* Use client-side storage to store persistent data.
 
-*Be responsive.
+* Be responsive.
 
-*Have a polished UI.
+* Have a polished UI.
 
-*Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class/id naming conventions, indentation, quality comments, and so on).
+* Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class/id naming conventions, indentation, quality comments, and so on).
 
-*Have a quality README (including a unique name, description, technologies used, screenshot, and link to the deployed application).
+* Have a quality README (including a unique name, description, technologies used, screenshot, and link to the deployed application).
 
 ## User Story
 
@@ -56,18 +56,21 @@ If you delete your local storage then your favourites page will empty and you wi
 
 ## Usage
 
-SCREENSHOTS TO GO HERE
-<!-- ![alt text](./assets/images/Crypto-Tracker.png) -->
+![alt text](./assets/images/readme-images/Screenshot-Main.png)
+![alt text](./assets/images/readme-images/Screenshot-Modal.png)
+![alt text](./assets/images/readme-images/Screenshot-Favourites.png)
+![alt text](./assets/images/readme-images/Screenshot-News.png)
+![alt text](./assets/images/readme-images/Screenshot-Crypto-Currencies.png)
+
 
 ## Technology Used
 
-* news API
-* Coinranking API
+* News catcher API
+* Coin ranking API
 * Chart.js
 * JavaScript
 * jQuery
 * Bootstrap
-* The DOM
 * CSS and HTML files.
 
 ## Credits
