@@ -3,14 +3,13 @@
   --primary-color: #322c56;
   --primary-shadow: 0px 0px 13px 2px #4b4180;
   --cards-color: #d9d9d9 !important;
+  --modal-outside-color: rgba(0,0,0,0.5);
 }
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
 h2 {
   font-size: 2.2rem !important;
   font-weight: 400 !important;
@@ -24,11 +23,21 @@ h4 {
 p {
   font-size: 1.1rem !important;
 }
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+/* Jumbotron for all pages */
 .jumbotron {
   width: 95%;
   margin: 30px auto !important;
   padding: 30px 20px;
-  /* From https://css.glass */
+}
+.bg {
   background: rgba(142, 134, 187, 0.19);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -40,6 +49,7 @@ p {
 #error {
   color: red;
 }
+/* hide elements */
 .hide {
   display: none;
   opacity: none;
@@ -48,55 +58,35 @@ p {
 
 /* Navbar */
 #mobile-nav {
-    width: 100vw;
-    background-color: var(--primary-color);
-}
-
-#mobile-nav * {
-    color: #fff;
-}
-
-nav {
+  width: 100vw;
   background-color: var(--primary-color);
 }
-
+#mobile-nav * {
+  color: #fff;
+}
+nav {
+background-color: var(--primary-color);
+}
 @media (max-width: 768px) {
-    #normal-nav {
-        display: none;
-    }
-}
-
-@media (min-width: 769px) {
-    #mobile-nav {
-        display: none;
-    }
-    /* Removing this fixes the issue with the nav bar not streaching
-       far down enough in certain situations */
-    /* nav {
-        height: 180vh !important;
-    } */
-}
-
-    /* Removing this fixes the issue with the nav bar not streaching
-       far down enough in certain situations */
-/* @media (min-width: 768px) {
-  nav {
-    height: 250vh !important;
+  #normal-nav {
+      display: none;
   }
-} */
-
+}
+@media (min-width: 769px) {
+  #mobile-nav {
+      display: none;
+  }
+}
 nav ul {
   padding: 10px !important;
   list-style: none;
   margin: 30px auto;
   position: fixed;
 }
-
 nav ul li a {
   color: #fff;
   margin-top: 5px;
 }
-
 nav ul li:first-child {
   font-size: 1.8rem;
   font-weight: 700;
@@ -109,7 +99,6 @@ nav ul li:first-child {
   justify-content: space-around;
   padding: 0;
 }
-
 /* Left side */
 .stats-container {
   width: 40%;
@@ -120,16 +109,13 @@ nav ul li:first-child {
   margin-right: 25px;
   margin-top: 25px;
 }
-
 .stats-wrapper p {
   display: flex;
   justify-content: space-between;
 }
-
 .stats-wrapper p span {
   font-weight: 500;
 }
-
 /* Right side */
 .favourites-ad {
   width: 50%;
@@ -139,11 +125,9 @@ nav ul li:first-child {
   flex-direction: column;
   text-align: center;
 }
-
 .lead {
   margin-top: 15px;
 }
-
 button {
   background-color: var(--primary-color);
   color: #fff;
@@ -154,7 +138,6 @@ button {
   border-radius: 30px;
   align-self: center;
 }
-
 button:hover {
   box-shadow: var(--primary-shadow);
 }
@@ -164,25 +147,21 @@ button:hover {
   margin: 30px auto !important;
   padding: 0;
 }
-
 .top-10 {
   overflow: scroll;
   overflow-y: hidden;
 }
-
 .top-10::-webkit-scrollbar {
   background-color: transparent;
   height: 10px;
   border-radius: 10px;
 }
-
 .top-10::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
   border-radius: 10px;
   width: 40px;
 }
-/* This is for the top 10 on the home page, so we keep scroll */
-#top10 .cardsWrapper {
+.cardsWrapper {
   display: flex;
   flex-direction: row;
   width: auto;
@@ -201,18 +180,11 @@ button:hover {
   padding: 20px 0px;
   margin: 0px 10px;
 }
-
 .card {
   border-radius: 16px;
   min-width: 300px;
   max-width: 300px;
-  background: rgba(142, 134, 187, 0.19);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.4px);
-  -webkit-backdrop-filter: blur(4.4px);
-  border: 1px solid rgba(142, 134, 187, 0.34);
 }
-
 .coinCard {
   cursor: pointer;
   animation: fadeIn 0.9s;
@@ -222,24 +194,20 @@ button:hover {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-
 .card-header {
   display: flex;
   padding: 10px 20px;
   justify-content: space-between;
 }
-
 .card p {
   display: flex;
   justify-content: space-between;
   margin-top: 6px;
   padding: 5px 20px;
 }
-
 .card p span {
   font-weight: 500;
 }
-
 .fa-heart {
   font-size: 1.3rem;
   align-self: flex-end;
@@ -247,7 +215,6 @@ button:hover {
   cursor: pointer;
   transition: all 0.2s ease-out;
 }
-
 @keyframes heartAnimation {
   from {
     font-size: 1rem;
@@ -257,7 +224,6 @@ button:hover {
     font-size: 0.9rem;
   }
 }
-
 .saved-icon {
   color: red;
   animation-name: heartAnimation;
@@ -271,8 +237,8 @@ button:hover {
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
+  background: var(--modal-outside-color);
   z-index: 1001;
-
 }
 .coin-modal-inner {
   width: 90vw;
@@ -303,26 +269,35 @@ button:hover {
 
 /* there is a syntax error here in the main file, get
 rid of the " , " */
-.coin-modal-header h1
-h2
+.coin-modal-header h1,
+h2,
 h4 {
   /* color: var(--primary-color); */
   color: #fff;
 }
-
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+.input-group input {
+  width: 80%;
+}
+.input-group button {
+    margin-top: 20px;
+    padding: 10px 25px;
+}
 #chart {
   min-width: 90%;
   min-height: 45%;
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
 }
-
 .coin-modal-info {
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 0 30px;
+  padding: 10px;
 }
 
 .statistics-block {
@@ -393,27 +368,32 @@ h4 {
   flex-direction: column;
   width: auto;
   gap: 30px;
-  padding: 20px 20px;
 }
 .card-new {
+  margin-right: 15px;
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* From https://css.glass */
-  background: rgba(142, 134, 187, 0.19);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.4px);
-  -webkit-backdrop-filter: blur(4.4px);
-  border: 1px solid rgba(142, 134, 187, 0.34);
 }
 .card-new-title {
   font-size: 1.3rem;
   border-bottom: 1px solid #c0c0c0;
   padding: 10px;
+  margin: 0 auto;
   text-align: center;
 }
+
+.card-middle-wrap p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  line-height: 1.5rem;  /* fallback */
+  max-height: 6rem;    
+}
+
 /* to add cards in a row -> display colum gap 20px */
 .card-middle-wrap {
   display: flex;
@@ -429,14 +409,6 @@ h4 {
   width: 300px;
   height: 200px;
   margin-left: 15px;
-}
-.link-news-card {
-  color: black;
-  text-decoration: none;
-}
-.link-news-card:hover {
-  color: black;
-  text-decoration: none;
 }
 .card-new-author {
   font-weight: bold;
@@ -477,19 +449,21 @@ h4 {
   overflow: scroll;
   overflow-x: hidden;
   height: 1500px;
+  margin: 5px;
+  padding: 0;
 }
-.card-new {
-  margin-bottom: 30px;
-  margin-right: 20px;
+#cardsNewsContainer .link-news-card .card-new{
+    margin-bottom: 20px;
+}
+.search-button {
+    margin-top: 20px;
+    padding: 10px 25px;
+}
+.form-input {
+    width: 80%;
 }
 
-@media (max-width: 768px) {
-  nav {
-    background-color: var(--primary-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+@media (max-width: 940px) {
   .jumbo-1 .container {
     display: flex;
 
@@ -537,6 +511,13 @@ h4 {
     display: flex;
     flex-direction: column;
   }
+
+
+  .coin-modal-inner {
+    width: 98vw;
+    height: 98vh;
+    padding: 5px;
+  }
   /* Favourites page */
   .jumbo-2 {
     width: 80%;
@@ -571,38 +552,20 @@ h4 {
   .card {
     border-radius: 16px;
     min-width: 280px;
-    background: rgba(142, 134, 187, 0.19);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.4px);
-    -webkit-backdrop-filter: blur(4.4px);
-    border: 1px solid rgba(142, 134, 187, 0.34);
   }
   .cards-news-wrapper {
-    overflow: scroll;
     height: 450px;
     width: 100%;
-    width: 300px;
-    padding-right: 0px;
-    margin: 0 auto;
     margin-top: 30px;
   }
-  #topNews {
-    padding: 5px;
-  }
   .card-new {
-    width: 280px;
+    width: 295px;
     padding: 0px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* From https://css.glass */
-    background: rgba(142, 134, 187, 0.19);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.4px);
-    -webkit-backdrop-filter: blur(4.4px);
-    border: 1px solid rgba(142, 134, 187, 0.34);
     margin-right: 50px;
+    margin: 0 auto;
   }
   .card-new-title {
     font-size: 1.1rem;
@@ -618,7 +581,7 @@ h4 {
   #topNews {
     margin-right: 10px;
     padding: 0px;
-  }
+  } 
   .card-new-author {
     font-weight: bold;
     align-self: flex-end;
@@ -627,6 +590,11 @@ h4 {
   /* Favourites page */
   .jumbo-2 {
     width: 90%;
+  }
+  /* News page */
+  #cardsNewsContainer {
+    height: 600px;
+    
   }
 }
 
@@ -647,4 +615,47 @@ h4 {
 
 .logo {
   font-family: 'Cinzel', serif;
+}
+
+/* Loading spinner */
+#spinner{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--modal-outside-color);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner-circle {
+  background: #fff;
+  width: 3rem; 
+  height: 3rem;
+}
+/* ======= */
+
+/* Animated Layout */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  0%    { opacity: 0; }
+  20%   { opacity: 0.3; }
+  80%   { opacity: 0.6; }
+  100%  { opacity: 1; }
+}
+main {  
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 1.5s ease-out 0s 1 slideInFromLeft;
+}
+.jumbotron {
+  animation: 2s ease-out 0s 1 fadeIn;
 }

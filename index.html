@@ -1,70 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/201aa93ea7.js"
+      crossorigin="anonymous"
+    ></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="https://kit.fontawesome.com/201aa93ea7.js" crossorigin="anonymous"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets//images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/images/favicon/site.webmanifest" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets//images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
     <title>Crypto Tracker</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container-fluid .d-xs-none">
-        <div class="row">
-            <nav id="mobile-nav" class="navbar navbar-expand-lg navbar-dark">
-                <a class="nav-link active logo" aria-current="page" href="./index.html"><img
-                        src="./assets/images/favicon/favicon-32x32.png" alt="favicon">Crypto-Tracker</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="./assets/html/crypto-currency.html">Crypto Currencies</a>
-                        <a class="nav-link" href="./assets/html/news.html">News</a>
-                        <a class="nav-link" href="./assets/html/favourites.html">Favourites</a>
-                    </div>
-                </div>
-            </nav>
+      <div class="row">
+        <nav id="mobile-nav" class="navbar navbar-expand-lg navbar-dark">
+          <a
+            class="nav-link active logo"
+            aria-current="page"
+            href="./index.html"
+            ><img
+              src="./assets/images/favicon/favicon-32x32.png"
+              alt="favicon"
+            />Crypto-Tracker</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="./assets/html/crypto-currency.html"
+                >Crypto Currencies</a
+              >
+              <a class="nav-link" href="./assets/html/news.html">News</a>
+              <a class="nav-link" href="./assets/html/favourites.html"
+                >Favourites</a
+              >
+            </div>
+          </div>
+        </nav>
 
-            <nav id="normal-nav" class="col-md-3">
-                <ul>
-                    <li class="nav-item">
-                        <a class="nav-link active logo" aria-current="page" href="./index.html"><img
-                                src="./assets/images/favicon/favicon-32x32.png" alt="favicon">Crypto-Tracker</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./assets/html/crypto-currency.html">Crypto Currencies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./assets/html/news.html">News</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./assets/html/favourites.html">Favourites</a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- main jumbotron header-->
-            <main class="col-md-9">
-                <div class="jumbotron jumbo-1 jumbotron-fluid">
-
-                    <div class="container">
-                        <div class="favourites-ad">
-                            <h2 class="display-4">Crypo Tracker</h2>
-                            <p class="lead">
-                                <!-- View the most popular Crypto Coins and todays news on the Crypto Currency
+        <nav id="normal-nav" class="col-md-3">
+          <ul>
+            <li class="nav-item">
+              <a
+                class="nav-link active logo"
+                aria-current="page"
+                href="./index.html"
+                ><img
+                  src="./assets/images/favicon/favicon-32x32.png"
+                  alt="favicon"
+                />Crypto-Tracker</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./assets/html/crypto-currency.html"
+                >Crypto Currencies</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./assets/html/news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./assets/html/favourites.html"
+                >Favourites</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <!-- main jumbotron header-->
+        <main class="col-md-9">
+          <div class="jumbotron jumbo-1 jumbotron-fluid bg">
+            <div class="container">
+              <div class="favourites-ad">
+                <h2 class="display-4">Crypo Tracker</h2>
+                <p class="lead">
+                  <!-- View the most popular Crypto Coins and todays news on the Crypto Currency
                                 market.
                                 <br>
                                 If you want to delve deeper, head over to the Crypto Currency page to see all of the
@@ -73,43 +129,45 @@
                                 Have your favourites? Select your top 3 and head over to the Favourites page to keep a
                                 closer eye
                                 on them. -->
-                                Add your favourite coins to your personal list with one click of the heart icon for
-                                quick access to investment information. Track the latest prices and performance with our
-                                charts. Take control of your crypto journey now!
-                            </p>
-                            <a href="assets/html/favourites.html"><button class="to-fav-btn">Favourites</button></a>
-                        </div>
-                    </div>
+                  Add your favourite coins to your personal list with one click
+                  of the heart icon for quick access to investment information.
+                  Track the latest prices and performance with our charts. Take
+                  control of your crypto journey now!
+                </p>
+                <a href="assets/html/favourites.html"
+                  ><button class="to-fav-btn">Favourites</button></a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- div for the top 10 crypto currencies-->
+          <div class="cards">
+            <h2>Top 10 Crypto Currencies</h2>
+            <div class="top-10" id="top10"></div>
+          </div>
 
-                </div>
-                <!-- div for the top 10 crypto currencies-->
-                <div class="cards">
-                    <h2>Top 10 Crypto Currencies</h2>
-                    <div class="top-10" id="top10">
-                    </div>
-                </div>
-
-                <!-- div for the top 6 news articles about crypto currencies-->
-                <div class="cards">
-                    <h2>Top Crypto News</h2>
-                    <div class="cards-news-wrapper">
-                        <div class="news" id="topNews">
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </main>
-        </div>
+          <!-- div for the top 6 news articles about crypto currencies-->
+          <div class="cards">
+            <h2>Top Crypto News</h2>
+            <div class="cards-news-wrapper">
+              <div class="news" id="topNews"></div>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
 
     <div class="footer">
-        <p>Designed with ❤️️ by Aleksandr Riabov, Ainhoa Prada, Alana Barrett-Frew, Adrian Kosnik &copy; Crypto Tracker
-            2023</p>
-        <a class="favicon-footer-link" href="https://www.flaticon.com/free-icons/cryptocurrency"
-            title="cryptocurrency icons">Cryptocurrency
-            icons created by Flat Icons - Flaticon</a>
+      <p>
+        Designed with ❤️️ by Aleksandr Riabov, Ainhoa Prada, Alana Barrett-Frew,
+        Adrian Kosnik &copy; Crypto Tracker 2023
+      </p>
+      <a
+        class="favicon-footer-link"
+        href="https://www.flaticon.com/free-icons/cryptocurrency"
+        title="cryptocurrency icons"
+        >Cryptocurrency icons created by Flat Icons - Flaticon</a
+      >
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/services/coins.js"></script>
@@ -118,9 +176,10 @@
     <script src="./assets/js/crypto-graph.js"></script>
     <script src="./assets/js/coinDetailsModal.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
