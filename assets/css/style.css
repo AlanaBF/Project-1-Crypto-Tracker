@@ -132,24 +132,20 @@ button:hover {
   margin: 30px auto !important;
   padding: 0;
 }
-
 .top-10 {
   overflow: scroll;
   overflow-y: hidden;
 }
-
 .top-10::-webkit-scrollbar {
   background-color: transparent;
   height: 10px;
   border-radius: 10px;
 }
-
 .top-10::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
   border-radius: 10px;
   width: 40px;
 }
-
 .cardsWrapper {
   display: flex;
   flex-direction: row;
@@ -321,9 +317,9 @@ h4 {
   flex-direction: column;
   width: auto;
   gap: 30px;
-  padding: 20px 20px;
 }
 .card-new {
+  margin-right: 15px;
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
@@ -335,13 +331,21 @@ h4 {
   backdrop-filter: blur(4.4px);
   -webkit-backdrop-filter: blur(4.4px);
   border: 1px solid rgba(142, 134, 187, 0.34);
+
 }
 .card-new-title {
   font-size: 1.3rem;
   border-bottom: 1px solid #c0c0c0;
   padding: 10px;
+  margin: 0 auto;
   text-align: center;
 }
+/* .card-middle-wrap p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+} */
 /* to add cards in a row -> display colum gap 20px */
 .card-middle-wrap {
   display: flex;
@@ -405,13 +409,14 @@ h4 {
   overflow: scroll;
   overflow-x: hidden;
   height: 1500px;
+  margin: 5px;
+  padding: 0;
 }
-.card-new {
-  margin-bottom: 30px;
-  margin-right: 20px;
+#cardsNewsContainer .link-news-card .card-new{
+    margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 940px) {
   nav {
     background-color: var(--primary-color);
     display: flex;
@@ -506,19 +511,12 @@ h4 {
     border: 1px solid rgba(142, 134, 187, 0.34);
   }
   .cards-news-wrapper {
-    overflow: scroll;
     height: 450px;
     width: 100%;
-    width: 300px;
-    padding-right: 0px;
-    margin: 0 auto;
     margin-top: 30px;
   }
-  #topNews {
-    padding: 5px;
-  }
   .card-new {
-    width: 280px;
+    width: 295px;
     padding: 0px;
     display: flex;
     flex-direction: column;
@@ -531,6 +529,7 @@ h4 {
     -webkit-backdrop-filter: blur(4.4px);
     border: 1px solid rgba(142, 134, 187, 0.34);
     margin-right: 50px;
+    margin: 0 auto;
   }
   .card-new-title {
     font-size: 1.1rem;
@@ -546,7 +545,7 @@ h4 {
   #topNews {
     margin-right: 10px;
     padding: 0px;
-  }
+  } 
   .card-new-author {
     font-weight: bold;
     align-self: flex-end;
@@ -555,6 +554,11 @@ h4 {
   /* Favourites page */
   .jumbo-2 {
     width: 90%;
+  }
+  /* News page */
+  #cardsNewsContainer {
+    height: 600px;
+    
   }
 }
 
