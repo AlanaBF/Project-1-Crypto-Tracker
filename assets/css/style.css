@@ -330,6 +330,14 @@ h4 {
   color: #fff;
 }
 
+.info a:hover {
+  text-decoration: underline;
+}
+
+.statistics-block a:hover {
+  text-decoration: underline;
+}
+
 .statistics-block span {
   font-weight: 600;
 }
