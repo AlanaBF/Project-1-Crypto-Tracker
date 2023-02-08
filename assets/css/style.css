@@ -64,6 +64,10 @@ a:hover {
 #mobile-nav * {
   color: #fff;
 }
+#normal-nav {
+  min-height: 92vh;
+}
+
 nav {
 background-color: var(--primary-color);
 }
