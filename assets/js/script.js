@@ -8,8 +8,11 @@
 //This formatter is needed to convert big numbers into nice looking str
 //Taken from stackoverflow :) 
 
+const beebSound = new Audio('./assets/sounds/beep.mp3');
+const hitSound = new Audio('./assets/sounds/hit.mp3');
 
 let formatter = Intl.NumberFormat('en', { notation: 'compact' });
+
 async function displayCoins() {
 	let response;
 	try {
@@ -107,11 +110,13 @@ function saveToLS(e) {
 	// Check if the current card's UUID is already in the list of favourites
 	const isFavourite = favourites.includes(currentCardUuid);
 	if (isFavourite) {
+		hitSound.play();
 		// If the UUID is already in the favourites, remove it from the list
 		favourites = favourites.filter(uuid => uuid !== currentCardUuid);
 		//Remove styles from heart icon
 		$(this).removeClass('saved-icon');
 	} else {
+		beebSound.play();
 		// If the UUID is not in the favourites, add it to the list
 		favourites = [...favourites, currentCardUuid];
 		$(this).addClass('saved-icon');
@@ -126,3 +131,22 @@ function saveToLS(e) {
 displayCoins();
 
 
+
+//Function to show loading spinner component while awaiting for response
+function showLoadingSpiner() {
+	//Create html for loading component
+	const spiner = `
+	<div id='spinner'>
+	<div  class="spinner-grow  spinner-circle" style="" role="status">
+   <span class="sr-only">Loading...</span>
+  </div>
+	</div>
+	`
+	//Add to the page
+	$('body').append(spiner);
+}
+
+//Function to remove loadeing spiner component
+function hideLoadingSpinner() {
+	$('#spinner').remove();
+}
