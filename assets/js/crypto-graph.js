@@ -29,7 +29,13 @@ function drawGraph(responseArray, canvasId) {
             datasets: [
                 {
                     label: 'Price in USD',
-                    data: priceDataSets.reverse()
+                    data: priceDataSets.reverse(),
+                    fill: false,
+                    backgroundColor: 'rgba(50, 44, 86, 0.6)',
+                    borderColor: 'rgba(50, 44, 86, 0.6)',
+                    tension: 0.1,
+                    borderWidth: 2,
+                    pointRadius: 0,
                 }
             ]
         }
