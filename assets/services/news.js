@@ -1,4 +1,4 @@
-var apiKey = 'CRWFZih4W5K9yNqks-K1TKKYuTVM1ZWaxHEQREWzZ7U';
+// var apiKey = 'CRWFZih4W5K9yNqks-K1TKKYuTVM1ZWaxHEQREWzZ7U';
 var newsTop10 = $('#topNews');
 var newsSectionCards = $('#cardsNewsContainer');
 var newsSectionInput = $('#search-news-input');
