@@ -45,6 +45,7 @@ p {
   opacity: none;
   pointer-events: none;
 }
+
 /* Navbar */
 #mobile-nav {
     width: 100vw;
@@ -214,6 +215,12 @@ button:hover {
 
 .coinCard {
   cursor: pointer;
+  animation: fadeIn 0.9s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .card-header {
