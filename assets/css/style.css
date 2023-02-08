@@ -462,6 +462,13 @@ h4 {
 #cardsNewsContainer .link-news-card .card-new{
     margin-bottom: 20px;
 }
+.search-button {
+    margin-top: 20px;
+    padding: 10px 25px;
+}
+.form-input {
+    width: 80%;
+}
 
 @media (max-width: 940px) {
   nav {
