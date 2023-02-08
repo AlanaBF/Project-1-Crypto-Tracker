@@ -269,8 +269,8 @@ button:hover {
 
 /* there is a syntax error here in the main file, get
 rid of the " , " */
-.coin-modal-header h1,
-h2,
+.coin-modal-header h1
+h2
 h4 {
   /* color: var(--primary-color); */
   color: #fff;
