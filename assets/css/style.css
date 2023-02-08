@@ -388,12 +388,17 @@ h4 {
   margin: 0 auto;
   text-align: center;
 }
-/* .card-middle-wrap p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 250px;
-} */
+
+.card-middle-wrap p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  line-height: 1.5rem;  /* fallback */
+  max-height: 6rem;    
+}
+
 /* to add cards in a row -> display colum gap 20px */
 .card-middle-wrap {
   display: flex;
