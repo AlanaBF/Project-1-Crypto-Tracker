@@ -69,7 +69,9 @@ a:hover {
 }
 
 nav {
-background-color: var(--primary-color);
+  background-color: var(--primary-color);
+  z-index: 33;
+
 }
 @media (max-width: 768px) {
   #normal-nav {
@@ -153,18 +155,19 @@ button:hover {
 }
 .top-10 {
   overflow: scroll;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 .top-10::-webkit-scrollbar {
-  background-color: transparent;
   height: 10px;
-  border-radius: 10px;
+}
+.top-10::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 .top-10::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
-  border-radius: 10px;
-  width: 40px;
+  border-radius: 10px; 
 }
+
 .cardsWrapper {
   display: flex;
   flex-direction: row;

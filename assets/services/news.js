@@ -1,4 +1,4 @@
-var apiKey = 'CRWFZih4W5K9yNqks-K1TKKYuTVM1ZWaxHEQREWzZ7U';
+// var apiKey = 'CRWFZih4W5K9yNqks-K1TKKYuTVM1ZWaxHEQREWzZ7U';
 var newsTop10 = $('#topNews');
 var newsSectionCards = $('#cardsNewsContainer');
 var newsSectionInput = $('#search-news-input');
@@ -122,21 +122,12 @@ function getCryptoNews(query, limit = 10) {
     }).then(function(res) {
         console.log(res);
         console.log(res.articles.length);
-        
+        createNewsCards(res, newsTop10);
+        createNewsCards(res, newsSectionCards);
     })
 }
-// getCryptoNews('Cryptocurrency');
+getCryptoNews('Cryptocurrency');
 
-//get the input value
-//use the value as a query
-//generate cards (limit 10).
-
-//For each card
-//Title = res.articles[i].title;
-//Summary = res.articles[i].summary
-//Author = 
-//On click - link to article - redirect page = res.articles[i].link
-//For each article, add a card; res.articles.length.
 function getInputVal() {
     newsSectionButton.click(() => {
         var query = newsSectionInput.val().trim().toLowerCase();
@@ -145,19 +136,17 @@ function getInputVal() {
         if(query == '') {
             error.removeClass('hide');
         } else {
-            error.addClass('hide');
-            createNewsCards(articles, newsSectionCards);
+            error.addClass('hide'); 
+            getCryptoNews(query)
             newsSectionInput.val('');
-            // getCryptoNews(query) 
         } 
     })
 }
 getInputVal();
-createNewsCards(articles, newsTop10);
-function createNewsCards(articles, container) {
-        for( var i = 0; i < articles.length; i++) {
-            var link = articles[i].link;
-            var img = articles[i].media;
+function createNewsCards(res, container) {
+        for( var i = 0; i < res.articles.length; i++) {
+            var link = res.articles[i].link;
+            var img = res.articles[i].media;
             var linkwraper = $(`<a class="link-news-card" target="_blank" href="${link}">`);
             var cardNew = $('<div class="card-new bg">');
             var title = $('<h4 class="card-new-title">');
@@ -165,9 +154,9 @@ function createNewsCards(articles, container) {
             var author = $('<p class="card-new-author">');
             var image = $('<img class= "card-new-img">');
             var middleWrap = $('<div class="card-middle-wrap">');
-            title.text(articles[i].title);
-            summary.text(articles[i].summary);
-            author.text('-' + articles[i].author);
+            title.text(res.articles[i].title);
+            summary.text(res.articles[i].summary);
+            author.text('-' + res.articles[i].author);
             image.attr('src', img);
             //cardNew.click(()=> {
             //     window.location.replace(link);
