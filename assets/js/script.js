@@ -10,6 +10,7 @@
 
 
 let formatter = Intl.NumberFormat('en', { notation: 'compact' });
+
 async function displayCoins() {
 	let response;
 	try {
@@ -126,3 +127,22 @@ function saveToLS(e) {
 displayCoins();
 
 
+
+//Function to show loading spinner component while awaiting for response
+function showLoadingSpiner() {
+	//Create html for loading component
+	const spiner = `
+	<div id='spinner'>
+	<div  class="spinner-grow  spinner-circle" style="" role="status">
+   <span class="sr-only">Loading...</span>
+  </div>
+	</div>
+	`
+	//Add to the page
+	$('body').append(spiner);
+}
+
+//Function to remove loadeing spiner component
+function hideLoadingSpinner() {
+	$('#spinner').remove();
+}
