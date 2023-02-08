@@ -56,7 +56,7 @@ function createCoinCard(coin, favourites) {
 
 	// Return the HTML template for a single coin card
 	return `
-    <div data-uuid='${uuid}' class="card coinCard">
+    <div data-uuid='${uuid}' class="card coinCard bg">
       <div class='card-header'>
         <h4>${name}</h4>
         <img class='coin-icon' width='30px' src='${iconUrl}' alt='${symbol} icon'/>
