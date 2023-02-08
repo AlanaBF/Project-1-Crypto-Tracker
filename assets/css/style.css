@@ -46,18 +46,49 @@ p {
   pointer-events: none;
 }
 /* Navbar */
+#mobile-nav {
+    width: 100vw;
+    background-color: var(--primary-color);
+}
+
+#mobile-nav * {
+    color: #fff;
+}
+
 nav {
   background-color: var(--primary-color);
 }
-@media (min-width: 768px) {
+
+@media (max-width: 768px) {
+    #normal-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    #mobile-nav {
+        display: none;
+    }
+    /* Removing this fixes the issue with the nav bar not streaching
+       far down enough in certain situations */
+    /* nav {
+        height: 180vh !important;
+    } */
+}
+
+    /* Removing this fixes the issue with the nav bar not streaching
+       far down enough in certain situations */
+/* @media (min-width: 768px) {
   nav {
     height: 250vh !important;
   }
-}
+} */
+
 nav ul {
   padding: 10px !important;
   list-style: none;
   margin: 30px auto;
+  position: fixed;
 }
 
 nav ul li a {
@@ -146,8 +177,20 @@ button:hover {
   border-radius: 10px;
   width: 40px;
 }
+
 .cardsWrapper {
   display: flex;
+  flex-direction: row;
+  width: auto;
+  gap: 30px;
+  padding: 20px 0px;
+  margin: 0px 10px;
+}
+/* This is for the crypto-currency page so all the cards wrap */
+#cardsContainer .cardsWrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   flex-direction: row;
   width: auto;
   gap: 30px;
@@ -164,6 +207,10 @@ button:hover {
   backdrop-filter: blur(4.4px);
   -webkit-backdrop-filter: blur(4.4px);
   border: 1px solid rgba(142, 134, 187, 0.34);
+}
+
+.coinCard {
+  cursor: pointer;
 }
 
 .card-header {
@@ -575,4 +622,8 @@ h4 {
 .footer a {
   color: #fff;
   text-decoration: underline;
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
 }

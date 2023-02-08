@@ -63,11 +63,12 @@ SCREENSHOTS TO GO HERE
 
 * news API
 * Coinranking API
+* Chart.js
 * JavaScript
 * jQuery
 * Bootstrap
 * The DOM
-* CSS and html files.
+* CSS and HTML files.
 
 ## Credits
 

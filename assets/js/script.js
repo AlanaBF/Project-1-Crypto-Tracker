@@ -7,13 +7,14 @@
 
 //This formatter is needed to convert big numbers into nice looking str
 //Taken from stackoverflow :) 
-let formatter = Intl.NumberFormat('en', { notation: 'compact' });
 
+
+let formatter = Intl.NumberFormat('en', { notation: 'compact' });
 async function displayCoins() {
 	let response;
 	try {
 		// Get data from API by calling the getListOfCoins() function
-		 response = await getListOfCoins();
+		response = await getListOfCoins();
 		//Render general market stats to jumbotron
 	} catch (error) {
 		// Display an error message to the end-user if the API call fails
@@ -23,8 +24,6 @@ async function displayCoins() {
 	renderMarketStats(response.data.stats);
 	// Render 10 coin cards by passing the coins and parent element to the renderCoinCards() function
 	renderCoinCards(response.data.coins, $("#top10"));
-	
-	$('.cardsWrapper').on('click', '.coinCard', openModal);
 }
 
 //Function to create general market stats block
@@ -73,6 +72,7 @@ function createCoinCard(coin, favourites) {
 
 // Function to render 10 coin cards. Takes an array of coins and appends each coin card to coins wrapper and then to the given parent element
 function renderCoinCards(coins, parentElement) {
+
 	//Get an array with favourites coins uuids from localStorage
 	const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
 
@@ -90,6 +90,8 @@ function renderCoinCards(coins, parentElement) {
 	parentElement.append(cardsWrapperEl);
 	// Add event listener to save  favorite to localStorage 
 	$(cardsWrapperEl).on("click", '.fav-link', saveToLS);
+	//Add eventListener to open current coint info modal window
+	$('.cardsWrapper').on('click', '.coinCard', openModal);
 }
 
 
@@ -118,21 +120,6 @@ function saveToLS(e) {
 	// Save to local storage
 	localStorage.setItem("favourites", JSON.stringify(favourites));
 }
-
-
-
-//Function for each coin card to open coinDetailModal
-
-function openModal(e) {
-	//If clicked on heart inside card don't do anything
-	if (e.target.classList.contains('fav-link')) return
-
-	const uuid = $(this).attr('data-uuid');
-	$('body').addClass("modal-open");
-	displayCoinDetails(uuid);
-}
-
-
 
 
 // Call the displayCoins() function to start the process
