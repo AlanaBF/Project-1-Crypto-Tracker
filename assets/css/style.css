@@ -274,7 +274,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 0 30px;
+  padding: 10px;
 }
 
 .statistics-block {
@@ -489,6 +489,13 @@ h4 {
   .card-middle-wrap {
     display: flex;
     flex-direction: column;
+  }
+
+
+  .coin-modal-inner {
+    width: 98vw;
+    height: 98vh;
+    padding: 5px;
   }
   /* Favourites page */
   .jumbo-2 {
