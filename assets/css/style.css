@@ -55,6 +55,7 @@ a:hover {
   opacity: none;
   pointer-events: none;
 }
+
 /* Navbar */
 #mobile-nav {
   width: 100vw;
@@ -63,6 +64,10 @@ a:hover {
 #mobile-nav * {
   color: #fff;
 }
+#normal-nav {
+  min-height: 92vh;
+}
+
 nav {
 background-color: var(--primary-color);
 }
@@ -186,6 +191,12 @@ button:hover {
 }
 .coinCard {
   cursor: pointer;
+  animation: fadeIn 0.9s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 .card-header {
   display: flex;
@@ -228,6 +239,8 @@ button:hover {
   position: fixed;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
   background: var(--modal-outside-color);
   z-index: 1001;
 }
@@ -236,12 +249,20 @@ button:hover {
   max-width: 1200px;
   height: 90vh;
   background-color: #fff;
+  color: #fff;
   overflow-y: scroll;
   margin: 30px auto;
   padding: 30px;
   display: flex;
   flex-direction: column;
   position: relative;
+  /* From https://css.glass */
+  background: rgba(142, 134, 187, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.4px);
+  -webkit-backdrop-filter: blur(4.4px);
+  border: 1px solid rgba(142, 134, 187, 0.34);
 }
 
 .coin-modal-header {
@@ -249,10 +270,14 @@ button:hover {
   flex-direction: column;
   text-align: center;
 }
-.coin-modal-header h1,
-h2,
+
+/* there is a syntax error here in the main file, get
+rid of the " , " */
+.coin-modal-header h1
+h2
 h4 {
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  color: #fff;
 }
 .input-group {
   display: flex;
@@ -268,6 +293,8 @@ h4 {
 #chart {
   min-width: 90%;
   min-height: 45%;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
 }
 .coin-modal-info {
   width: 100%;
@@ -294,6 +321,18 @@ h4 {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #beb9b9;
+}
+
+.info a {
+  color: #fff;
+}
+
+.info a:hover {
+  text-decoration: underline;
+}
+
+.statistics-block a:hover {
+  text-decoration: underline;
 }
 
 .statistics-block span {
@@ -437,12 +476,6 @@ h4 {
 }
 
 @media (max-width: 940px) {
-  nav {
-    background-color: var(--primary-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   .jumbo-1 .container {
     display: flex;
 
@@ -615,3 +648,26 @@ h4 {
   height: 3rem;
 }
 /* ======= */
+
+/* Animated Layout */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  0%    { opacity: 0; }
+  20%   { opacity: 0.3; }
+  80%   { opacity: 0.6; }
+  100%  { opacity: 1; }
+}
+main {  
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 1.5s ease-out 0s 1 slideInFromLeft;
+}
+.jumbotron {
+  animation: 2s ease-out 0s 1 fadeIn;
+}
