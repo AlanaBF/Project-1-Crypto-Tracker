@@ -1,16 +1,7 @@
-// Displays a list of top 10 cryptocurrencies by utilizing the data from an API.
-// The displayCoins() function is an asynchronous function that calls the getListOfCoins() function, 
-// which is supposed to fetch data from an API.
-// The returned data is then passed to the renderCoinCards() function to render 10 coin cards. 
-// The createCoinCard() function creates a single coin card with the given coin data, 
-// and the renderCoinCards() function loops through the coins and appends each coin card to a parent element.
-
-//This formatter is needed to convert big numbers into nice looking str
-//Taken from stackoverflow :) 
-
 const beebSound = new Audio('./assets/sounds/beep.mp3');
 const hitSound = new Audio('./assets/sounds/hit.mp3');
 
+// This formatter is used to convert big numbers into a more readable string. Also used on other js files
 let formatter = Intl.NumberFormat('en', { notation: 'compact' });
 
 async function displayCoins() {
@@ -23,7 +14,7 @@ async function displayCoins() {
 		// Display an error message to the end-user if the API call fails
 		console.error('An error occurred while fetching the data from the API: ', error.responseJSON.message);
 	}
-
+// Pass the stats data to the renderMarketStats() function to render it
 	renderMarketStats(response.data.stats);
 	// Render 10 coin cards by passing the coins and parent element to the renderCoinCards() function
 	renderCoinCards(response.data.coins, $("#top10"));
