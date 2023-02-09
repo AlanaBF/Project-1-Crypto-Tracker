@@ -678,6 +678,7 @@ h4 {
 main {
   /* This section calls the slideInFromLeft animation we defined above */
   animation: 1.5s ease-out 0s 1 slideInFromLeft;
+  min-height: 92vh;
 }
 .jumbotron {
   animation: 1s ease-out 0s 1 fadeIn;
