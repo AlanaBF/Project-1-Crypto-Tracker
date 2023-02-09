@@ -303,12 +303,20 @@ h4 {
   /* color: var(--primary-color); */
   color: #fff;
 }
+#search-form {
+  width: 100% !important;
+}
+.form-group{
+  width: 100% !important;
+}
 .input-group {
   display: flex;
   flex-direction: column;
+  width: 100% !important;
 }
 .input-group input {
   width: 80%;
+  margin: 0 auto;
 }
 .input-group button {
     margin-top: 20px;
@@ -690,5 +698,5 @@ main {
   animation: 1.5s ease-out 0s 1 slideInFromLeft;
 }
 .jumbotron {
-  animation: 2s ease-out 0s 1 fadeIn;
+  animation: 1s ease-out 0s 1 fadeIn;
 }
