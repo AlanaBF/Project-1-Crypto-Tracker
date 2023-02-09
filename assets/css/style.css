@@ -94,10 +94,11 @@ nav ul li a {
   color: #fff;
   margin-top: 5px;
 }
-nav ul li a:hover {
+.nav-link:hover {
   text-shadow: 0px 2px 6px #1d1a2e;
   scale: 1.05;
-  color: #ffffff;
+  margin-left: 20px;
+  color: #fff;
 }
 .logo {
   font-family: 'Cinzel', serif;
