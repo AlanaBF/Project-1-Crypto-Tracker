@@ -29,7 +29,7 @@ function renderMarketStats(data) {
 		<div  class="stats-container">
 				<h4>Market Statistics</h4>
 				<div class="stats-wrapper" style='display: flex; justify-content: space-between;'>
-						<p>Total Criptocurrencies: <span>${totalCoins}</span></p>
+						<p>Total Cryptocurrencies: <span>${totalCoins}</span></p>
 						<p>Total Markets: <span>${totalMarkets}</span></p>
 						<p>Total MarketCap: <span>${formatter.format(totalMarketCap)}</span></p>
 						<p>Total 24h Volume: <span>${formatter.format(total24hVolume)}</span></p>
