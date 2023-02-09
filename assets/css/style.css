@@ -60,6 +60,7 @@ a:hover {
 #mobile-nav {
   width: 100vw;
   background-color: var(--primary-color);
+  padding: 10px 10px !important;
 }
 #mobile-nav * {
   color: #fff;
@@ -178,17 +179,6 @@ button:hover {
   overflow: scroll;
   /* overflow-y: hidden; */
 }
-.top-10::-webkit-scrollbar {
-  height: 10px;
-}
-.top-10::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-.top-10::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-  border-radius: 10px;
-}
-
 .cardsWrapper {
   display: flex;
   flex-direction: row;
@@ -395,17 +385,6 @@ h4 {
   overflow: scroll;
   overflow-x: hidden;
   height: 1050px;
-}
-.cards-news-wrapper::-webkit-scrollbar,
-#cardsNewsContainer::-webkit-scrollbar {
-  background-color: transparent;
-  width: 10px;
-  border-radius: 10px;
-}
-.cards-news-wrapper::-webkit-scrollbar-thumb,
-#cardsNewsContainer::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-  border-radius: 10px;
 }
 #topNews {
   display: flex;
@@ -699,4 +678,26 @@ main {
 }
 .jumbotron {
   animation: 1s ease-out 0s 1 fadeIn;
+}
+/* Scrollbar */
+.top-10::-webkit-scrollbar {
+  height: 10px;
+}
+.top-10::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.top-10::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+.cards-news-wrapper::-webkit-scrollbar,
+#cardsNewsContainer::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+  border-radius: 10px;
+}
+.cards-news-wrapper::-webkit-scrollbar-thumb,
+#cardsNewsContainer::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
 }
