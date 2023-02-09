@@ -74,12 +74,12 @@ nav {
   z-index: 33;
   padding: 0 !important;
 }
-@media (max-width: 768px) {
+@media (max-width: 940px) {
   #normal-nav {
       display: none;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 941px) {
   #mobile-nav {
       display: none;
   }
@@ -679,6 +679,7 @@ main {
   /* This section calls the slideInFromLeft animation we defined above */
   animation: 1.5s ease-out 0s 1 slideInFromLeft;
   min-height: 92vh;
+  margin: 0 auto;
 }
 .jumbotron {
   animation: 1s ease-out 0s 1 fadeIn;
