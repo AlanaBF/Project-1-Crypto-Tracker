@@ -1,9 +1,9 @@
 const API_KEY = 'db60a21bf6msh0c7c9e1851c4408p1d3b11jsnca09255a288c';
 const baseUrl = 'https://coinranking1.p.rapidapi.com/';
 
-//By default gets 10 top coins, but can be called with different limit
+// Function to retrieve a list of coins with a specified limit
 async function getListOfCoins(limit = 10) {
-	//Get a list of coins 
+	// Set the settings for the API call
 	const settings = {
 		"async": true,
 		"crossDomain": true,
@@ -15,17 +15,19 @@ async function getListOfCoins(limit = 10) {
 		}
 	};
 
+	// Use the $.ajax method to make the API call, wrapped in a try-catch block
 	try {
 		return await $.ajax(settings);
 	} catch (error) {
+		// Return the error if the API call fails
 		return error;
 	}
 
 }
 
-//Get specific coin by its UUID
+// Function to retrieve information for a specific coin by its UUID
 async function getOneCoin(UUID) {
-
+	// Set the parameters for the API call
 	const parameters = {
 		"async": true,
 		"crossDomain": true,
@@ -37,16 +39,18 @@ async function getOneCoin(UUID) {
 		}
 	};
 
+	// Use the $.ajax method to make the API call, wrapped in a try-catch block
 	try {
 		return await $.ajax(parameters);
 	} catch (error) {
+		// Return the error if the API call fails
 		return error;
 	}
 }
 
-
-//Get iformation for the chart
+// Function to retrieve information for a specific coin for use in a chart
 async function getCoinPriceHistory(UUID) {
+	// Set the settings for the API call
 	const settings = {
 		"async": true,
 		"crossDomain": true,
@@ -58,9 +62,12 @@ async function getCoinPriceHistory(UUID) {
 		}
 	};
 
+	// Use the $.ajax method to make the API call, wrapped in a try-catch block
 	try {
 		return await $.ajax(settings);
 	} catch (error) {
+		// Return the error if the API call fails
 		return error;
 	}
 }
+
